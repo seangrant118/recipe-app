@@ -17,21 +17,11 @@ class Signin extends React.Component {
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <fieldset>
           <label>Email</label>
-          <Field
-            name="email"
-            type="text"
-            component="input"
-            autoComplete="off"
-          />
+          <Field name="email" type="text" component="input" />
         </fieldset>
         <fieldset>
           <label>Password</label>
-          <Field
-            name="password"
-            type="password"
-            component="input"
-            autoComplete="off"
-          />
+          <Field name="password" type="password" component="input" />
         </fieldset>
         <div>{this.props.errorMessage}</div>
         <button>Signin</button>
