@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
-
+import { withRouter } from "react-router";
 import * as actions from "../../actions/search";
 
 const SearchBar = props => {
   const onRecipeChange = e => {
-    console.log("running");
     props.recipeSearch(e.target.value);
   };
+
+  const searchQuery = e => {
+    e.preventDefault();
+    const query = props.recipeSearchItem;
+    props.history.push("/search/" + query);
+  };
+
   const [searchItem, setSearchItem] = useState("recipe");
+
   if (searchItem === "recipe") {
     return (
       <div className="search-container">
         <button onClick={() => setSearchItem("ingredient")}>
           Search by ingredient
         </button>
-        <form>
+        <form onSubmit={searchQuery}>
           <input
             type="text"
             name="recipe"
@@ -51,4 +57,4 @@ function mapStateToProps(state) {
   return { recipeSearchItem: state.search.recipeSearchItem };
 }
 
-export default connect(mapStateToProps, actions)(SearchBar);
+export default connect(mapStateToProps, actions)(withRouter(SearchBar));
