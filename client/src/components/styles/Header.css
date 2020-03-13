@@ -6,3 +6,7 @@
 .header a {
   margin: 0 0.5em;
 }
+
+.search-container {
+  display: flex;
+}

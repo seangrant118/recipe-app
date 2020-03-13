@@ -34,20 +34,30 @@ class Header extends React.Component {
   renderSearchBar() {
     if (this.state.recipeSearch) {
       return (
-        <div>
-          <input type="text" name="recipe" placeholder="Search for a recipe" />
+        <div className="search-container">
           <button onClick={this.flipSearch}>Search by ingredient</button>
+          <form>
+            <input
+              type="text"
+              name="recipe"
+              placeholder="Search for a recipe"
+            />
+            <button>Search</button>
+          </form>
         </div>
       );
     } else {
       return (
-        <div>
-          <input
-            type="text"
-            name="ingredient"
-            placeholder="Search by ingredient"
-          />
+        <div className="search-container">
           <button onClick={this.flipSearch}>Search by recipie</button>
+          <form>
+            <input
+              type="text"
+              name="ingredient"
+              placeholder="Search by ingredient"
+            />
+            <button>search</button>
+          </form>
         </div>
       );
     }
