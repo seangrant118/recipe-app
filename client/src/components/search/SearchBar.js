@@ -8,10 +8,10 @@ const SearchBar = props => {
     props.recipeSearch(e.target.value);
   };
 
-  const searchQuery = e => {
+  const recipeQuery = e => {
     e.preventDefault();
     const query = props.recipeSearchItem;
-    props.history.push("/search/" + query);
+    props.history.push("/search/recipe/" + query);
   };
 
   const [searchItem, setSearchItem] = useState("recipe");
@@ -22,7 +22,7 @@ const SearchBar = props => {
         <button onClick={() => setSearchItem("ingredient")}>
           Search by ingredient
         </button>
-        <form onSubmit={searchQuery}>
+        <form onSubmit={recipeQuery}>
           <input
             type="text"
             name="recipe"
@@ -46,6 +46,7 @@ const SearchBar = props => {
             name="ingredient"
             placeholder="Search by ingredient"
           />
+          <button>+</button>
           <button>search</button>
         </form>
       </div>
