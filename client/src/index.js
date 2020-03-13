@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from "redux-thunk";
 
 import App from "./components/App";
@@ -13,6 +13,11 @@ import Feature from "./components/Feature";
 import Signout from "./components/auth/Signout";
 import Signin from "./components/auth/Signin";
 
+const composeEnhancers = compose(
+  applyMiddleware(reduxThunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 const store = createStore(
   reducers,
   {
@@ -20,7 +25,7 @@ const store = createStore(
       authenticated: localStorage.getItem("token")
     }
   },
-  applyMiddleware(reduxThunk)
+  composeEnhancers
 );
 
 ReactDOM.render(
