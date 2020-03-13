@@ -4,13 +4,16 @@ import { withRouter } from "react-router";
 import * as actions from "../../actions/search";
 
 const SearchBar = props => {
+  const [recipeItem, setRecipeItem] = useState("");
   const onRecipeChange = e => {
-    props.recipeSearch(e.target.value);
+    setRecipeItem(e.target.value);
   };
 
   const recipeQuery = e => {
     e.preventDefault();
-    const query = props.recipeSearchItem;
+    props.recipeSearch(recipeItem);
+    const query = recipeItem;
+    setRecipeItem("");
     props.history.push("/search/recipe/" + query);
   };
 
@@ -28,6 +31,7 @@ const SearchBar = props => {
             name="recipe"
             placeholder="Search for a recipe"
             onChange={onRecipeChange}
+            value={recipeItem}
           />
           <button>Search</button>
           <div>{props.recipeSearchItem}</div>
@@ -38,7 +42,7 @@ const SearchBar = props => {
     return (
       <div className="search-container">
         <button onClick={() => setSearchItem("recipe")}>
-          Search by recipie
+          Search by recipe
         </button>
         <form>
           <input
