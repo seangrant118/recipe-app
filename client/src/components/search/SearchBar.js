@@ -4,11 +4,17 @@ import { withRouter } from "react-router";
 import * as actions from "../../actions/search";
 
 const SearchBar = props => {
+  // Set Search Conditions
+  const [searchItem, setSearchItem] = useState("recipe");
+  //Set search item for recipe search
   const [recipeItem, setRecipeItem] = useState("");
+
+  // change state on change
   const onRecipeChange = e => {
     setRecipeItem(e.target.value);
   };
 
+  // search for recipes with the query params
   const recipeQuery = e => {
     e.preventDefault();
     props.recipeSearch(recipeItem);
@@ -16,8 +22,6 @@ const SearchBar = props => {
     setRecipeItem("");
     props.history.push("/search/recipe/" + query);
   };
-
-  const [searchItem, setSearchItem] = useState("recipe");
 
   if (searchItem === "recipe") {
     return (
