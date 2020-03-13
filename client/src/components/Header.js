@@ -4,6 +4,15 @@ import { connect } from "react-redux";
 import "./styles/Header.css";
 
 class Header extends React.Component {
+  state = {
+    recipeSearch: true
+  };
+
+  flipSearch = () => {
+    this.setState(() => ({
+      recipeSearch: !this.state.recipeSearch
+    }));
+  };
   renderLinks() {
     if (this.props.authenticated) {
       return (
@@ -22,10 +31,33 @@ class Header extends React.Component {
     }
   }
 
+  renderSearchBar() {
+    if (this.state.recipeSearch) {
+      return (
+        <div>
+          <input type="text" name="recipe" placeholder="Search for a recipe" />
+          <button onClick={this.flipSearch}>Search by ingredient</button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <input
+            type="text"
+            name="ingredient"
+            placeholder="Search by ingredient"
+          />
+          <button onClick={this.flipSearch}>Search by recipie</button>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="header">
         <Link to="/">Redux Auth</Link>
+        {this.renderSearchBar()}
         {this.renderLinks()}
       </div>
     );
