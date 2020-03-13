@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+// import { Link } from "react-router-dom";
 
-const SearchBar = () => {
-  const [searchItem, setSearchItem] = useState("search");
+import * as actions from "../../actions/search";
+
+const SearchBar = props => {
+  const onRecipeChange = e => {
+    console.log("running");
+    props.recipeSearch(e.target.value);
+  };
+  const [searchItem, setSearchItem] = useState("recipe");
   if (searchItem === "recipe") {
     return (
       <div className="search-container">
@@ -9,8 +17,14 @@ const SearchBar = () => {
           Search by ingredient
         </button>
         <form>
-          <input type="text" name="recipe" placeholder="Search for a recipe" />
+          <input
+            type="text"
+            name="recipe"
+            placeholder="Search for a recipe"
+            onChange={onRecipeChange}
+          />
           <button>Search</button>
+          <div>{props.recipeSearchItem}</div>
         </form>
       </div>
     );
@@ -33,4 +47,8 @@ const SearchBar = () => {
   }
 };
 
-export default SearchBar;
+function mapStateToProps(state) {
+  return { recipeSearchItem: state.search.recipeSearchItem };
+}
+
+export default connect(mapStateToProps, actions)(SearchBar);
