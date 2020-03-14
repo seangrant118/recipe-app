@@ -1,2 +1,2 @@
 export const RECIPE_SEARCH = "recipe_search";
-export const ADD_INGREDIENT = "add_ingredient";
+export const INGREDIENT_SEARCH = "ingredient_search";

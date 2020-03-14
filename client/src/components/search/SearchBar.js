@@ -21,6 +21,7 @@ const SearchBar = props => {
   // search for recipes with the query params
   const recipeQuery = e => {
     e.preventDefault();
+    //adds search item to redux
     props.recipeSearch(searchItem);
     const query = searchItem;
     setSearchItem("");
@@ -29,12 +30,22 @@ const SearchBar = props => {
 
   const addIngredient = e => {
     e.preventDefault();
+    if (searchItem.trim() === "") {
+      return;
+    }
     if (ingArr.length < 4) {
-      ingArr.push(searchItem);
+      ingArr.push(searchItem.trim());
     } else {
       setSearchError("You can include up to four ingredients");
     }
     setSearchItem("");
+  };
+
+  const ingredientQuery = e => {
+    e.preventDefault();
+    const query = ingArr;
+    props.ingredientSearch(ingArr);
+    props.history.push("/search/ingredient/" + query);
   };
 
   if (searchToggle === "recipe") {
@@ -72,9 +83,9 @@ const SearchBar = props => {
           />
           <button>+</button>
         </form>
-        <button>search</button>
-        {ingArr.map(ing => (
-          <li key={ing}>{ing}</li>
+        <button onClick={ingredientQuery}>search</button>
+        {ingArr.map((ing, i) => (
+          <li key={i}>{ing}</li>
         ))}
         {searchError}
       </div>
