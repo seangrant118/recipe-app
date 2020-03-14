@@ -3,30 +3,44 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import * as actions from "../../actions/search";
 
+const ingArr = [];
+
 const SearchBar = props => {
   // Set Search Conditions
-  const [searchItem, setSearchItem] = useState("recipe");
+  const [searchToggle, setSearchToggle] = useState("recipe");
   //Set search item for recipe search
-  const [recipeItem, setRecipeItem] = useState("");
+  const [searchItem, setSearchItem] = useState("");
+
+  const [searchError, setSearchError] = useState("");
 
   // change state on change
-  const onRecipeChange = e => {
-    setRecipeItem(e.target.value);
+  const onSearchChange = e => {
+    setSearchItem(e.target.value);
   };
 
   // search for recipes with the query params
   const recipeQuery = e => {
     e.preventDefault();
-    props.recipeSearch(recipeItem);
-    const query = recipeItem;
-    setRecipeItem("");
+    props.recipeSearch(searchItem);
+    const query = searchItem;
+    setSearchItem("");
     props.history.push("/search/recipe/" + query);
   };
 
-  if (searchItem === "recipe") {
+  const addIngredient = e => {
+    e.preventDefault();
+    if (ingArr.length < 4) {
+      ingArr.push(searchItem);
+    } else {
+      setSearchError("You can include up to four ingredients");
+    }
+    setSearchItem("");
+  };
+
+  if (searchToggle === "recipe") {
     return (
       <div className="search-container">
-        <button onClick={() => setSearchItem("ingredient")}>
+        <button onClick={() => setSearchToggle("ingredient")}>
           Search by ingredient
         </button>
         <form onSubmit={recipeQuery}>
@@ -34,8 +48,8 @@ const SearchBar = props => {
             type="text"
             name="recipe"
             placeholder="Search for a recipe"
-            onChange={onRecipeChange}
-            value={recipeItem}
+            onChange={onSearchChange}
+            value={searchItem}
           />
           <button>Search</button>
           <div>{props.recipeSearchItem}</div>
@@ -45,18 +59,24 @@ const SearchBar = props => {
   } else {
     return (
       <div className="search-container">
-        <button onClick={() => setSearchItem("recipe")}>
+        <button onClick={() => setSearchToggle("recipe")}>
           Search by recipe
         </button>
-        <form>
+        <form onSubmit={addIngredient}>
           <input
             type="text"
             name="ingredient"
             placeholder="Search by ingredient"
+            value={searchItem}
+            onChange={onSearchChange}
           />
           <button>+</button>
-          <button>search</button>
         </form>
+        <button>search</button>
+        {ingArr.map(ing => (
+          <li key={ing}>{ing}</li>
+        ))}
+        {searchError}
       </div>
     );
   }
