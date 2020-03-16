@@ -5,6 +5,7 @@ import RecipeFormDescription from "./RecipeFormDescription";
 import RecipeFormTime from "./RecipeFormTime";
 import RecipeFormServings from "./RecipeFormServings";
 import RecipeFormIngredient from "./RecipeFormIngredient";
+import RecipeFormSteps from "./RecipeFormSteps";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class CreateRecipe extends React.Component {
     ingredients: [
       {
         quantity: "",
-        unit: "",
+        unit: "cups",
         ingredient: ""
       }
     ],
@@ -79,7 +80,7 @@ class CreateRecipe extends React.Component {
     this.setState(prevState => ({
       ingredients: [
         ...prevState.ingredients,
-        { quantity: "", unit: "", ingredient: "" }
+        { quantity: "", unit: "cups", ingredient: "" }
       ]
     }));
   };
@@ -111,7 +112,6 @@ class CreateRecipe extends React.Component {
     }
   };
   render() {
-    let { steps } = this.state;
     return (
       <form>
         <RecipeFormTitle
@@ -139,25 +139,12 @@ class CreateRecipe extends React.Component {
           addIngredient={this.addIngredient}
           ingredients={this.state.ingredients}
         />
-        <fieldset onChange={this.stepChange}>
-          <button onClick={this.addStep}>Add Step</button>
-          {steps.map((step, i) => {
-            let stepID = `step-${i}`;
-
-            return (
-              <div key={i}>
-                <label>{`Step #${i + 1}`}</label>
-                <textarea
-                  type="text"
-                  name={stepID}
-                  data-id={i}
-                  id={stepID}
-                  className="step"
-                />
-              </div>
-            );
-          })}
-        </fieldset>
+        <RecipeFormSteps
+          stepChange={this.stepChange}
+          addStep={this.addStep}
+          steps={this.state.steps}
+        />
+        <button onSubmit={console.log("submit")}>Submit</button>
       </form>
     );
   }
