@@ -8,7 +8,12 @@ class CreateRecipe extends React.Component {
     cooktime: {
       time: "",
       unit: "Mins"
-    }
+    },
+    preptime: {
+      time: "",
+      unit: "Mins"
+    },
+    servings: 0
   };
   titleChange = e => {
     let title = e.target.value;
@@ -28,16 +33,29 @@ class CreateRecipe extends React.Component {
       cooktime: { ...prevState.cooktime, time }
     }));
   };
-  unitChange = e => {
+  cookUnitChange = e => {
     const unit = e.target.value;
     this.setState(prevState => ({
       cooktime: { ...prevState.cooktime, unit }
     }));
-    // this.setState({
-    //   cooktime: {
-    //     unit
-    //   }
-    // });
+  };
+  prepTimeChange = e => {
+    const time = e.target.value;
+    this.setState(prevState => ({
+      preptime: { ...prevState.preptime, time }
+    }));
+  };
+  prepUnitChange = e => {
+    const unit = e.target.value;
+    this.setState(prevState => ({
+      preptime: { ...prevState.preptime, unit }
+    }));
+  };
+  servingChange = e => {
+    const servings = e.target.value;
+    this.setState({
+      servings
+    });
   };
   render() {
     return (
@@ -71,10 +89,40 @@ class CreateRecipe extends React.Component {
             value={this.state.cooktime.time}
             onChange={this.cookTimeChange}
           />
-          <select value={this.state.cooktime.unit} onChange={this.unitChange}>
+          <select
+            value={this.state.cooktime.unit}
+            onChange={this.cookUnitChange}
+          >
             <option value="Mins">Mins</option>
             <option value="Hrs">Hrs</option>
           </select>
+        </fieldset>
+        <fieldset>
+          <label>Prep Time</label>
+          <input
+            name="prep time"
+            type="number"
+            placeholder="prep time"
+            value={this.state.preptime.time}
+            onChange={this.prepTimeChange}
+          />
+          <select
+            value={this.state.preptime.unit}
+            onChange={this.prepUnitChange}
+          >
+            <option value="Mins">Mins</option>
+            <option value="Hrs">Hrs</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label>Servings</label>
+          <input
+            name="servings"
+            type="number"
+            placeholder="0"
+            value={this.state.servings}
+            onChange={this.servingChange}
+          />
         </fieldset>
       </form>
     );
