@@ -12,6 +12,7 @@ class Header extends React.Component {
         <div>
           <Link to="/signout">Sign Out</Link>
           <Link to="/feature">Feature</Link>
+          <Link to="/createrecipe">Create Recipe</Link>
         </div>
       );
     } else {
