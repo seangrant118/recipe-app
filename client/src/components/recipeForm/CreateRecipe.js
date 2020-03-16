@@ -98,7 +98,7 @@ class CreateRecipe extends React.Component {
   };
   render() {
     return (
-      <form>
+      <div>
         <RecipeFormTitle
           titleChange={this.handleChange}
           title={this.state.title}
@@ -130,7 +130,7 @@ class CreateRecipe extends React.Component {
           steps={this.state.steps}
         />
         <button>Submit</button>
-      </form>
+      </div>
     );
   }
 }
