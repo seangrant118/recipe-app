@@ -33,17 +33,8 @@ class CreateRecipe extends React.Component {
       }
     ]
   };
-  titleChange = e => {
-    let title = e.target.value;
-    this.setState({
-      title
-    });
-  };
-  descriptionChange = e => {
-    const description = e.target.value;
-    this.setState({
-      description
-    });
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
   cookTimeChange = e => {
     const time = e.target.value;
@@ -68,12 +59,6 @@ class CreateRecipe extends React.Component {
     this.setState(prevState => ({
       preptime: { ...prevState.preptime, unit }
     }));
-  };
-  servingChange = e => {
-    const servings = e.target.value;
-    this.setState({
-      servings
-    });
   };
   addIngredient = e => {
     e.preventDefault();
@@ -115,11 +100,11 @@ class CreateRecipe extends React.Component {
     return (
       <form>
         <RecipeFormTitle
-          titleChange={this.titleChange}
+          titleChange={this.handleChange}
           title={this.state.title}
         />
         <RecipeFormDescription
-          descriptionChange={this.descriptionChange}
+          descriptionChange={this.handleChange}
           description={this.state.description}
         />
         <RecipeFormTime
@@ -132,7 +117,7 @@ class CreateRecipe extends React.Component {
         />
         <RecipeFormServings
           servings={this.state.servings}
-          servingChange={this.servingChange}
+          servingChange={this.handleChange}
         />
         <RecipeFormIngredient
           ingredientChange={this.ingredientChange}
@@ -144,7 +129,7 @@ class CreateRecipe extends React.Component {
           addStep={this.addStep}
           steps={this.state.steps}
         />
-        <button onSubmit={console.log("submit")}>Submit</button>
+        <button>Submit</button>
       </form>
     );
   }
