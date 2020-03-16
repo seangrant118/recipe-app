@@ -4,6 +4,7 @@ import RecipeFormTitle from "./RecipeFormTitle";
 import RecipeFormDescription from "./RecipeFormDescription";
 import RecipeFormTime from "./RecipeFormTime";
 import RecipeFormServings from "./RecipeFormServings";
+import RecipeFormIngredient from "./RecipeFormIngredient";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -110,7 +111,7 @@ class CreateRecipe extends React.Component {
     }
   };
   render() {
-    let { ingredients, steps } = this.state;
+    let { steps } = this.state;
     return (
       <form>
         <RecipeFormTitle
@@ -133,41 +134,11 @@ class CreateRecipe extends React.Component {
           servings={this.state.servings}
           servingChange={this.servingChange}
         />
-        <fieldset onChange={this.ingredientChange}>
-          <button onClick={this.addIngredient}>Add New Ingredient</button>
-          {ingredients.map((ingredient, i) => {
-            let ingredientID = `ingredient-${i}`;
-            let quantityID = `quantity-${i}`;
-            let unitID = `unit-${i}`;
-
-            return (
-              <div key={i}>
-                <label>{`Ingredient ${i + 1}`}</label>
-                <label htmlFor={quantityID}>Quantity</label>
-                <input
-                  type="number"
-                  name={quantityID}
-                  data-id={i}
-                  id={quantityID}
-                  className="quantity"
-                />
-                <label htmlFor={unitID}>Unit</label>
-                <select name={unitID} data-id={i} id={unitID} className="unit">
-                  <option value="cups">cups</option>
-                  <option value="tbs">tbs</option>
-                </select>
-                <label htmlFor={ingredientID}>Ingredient</label>
-                <input
-                  type="text"
-                  name={ingredientID}
-                  data-id={i}
-                  id={ingredientID}
-                  className="ingredient"
-                />
-              </div>
-            );
-          })}
-        </fieldset>
+        <RecipeFormIngredient
+          ingredientChange={this.ingredientChange}
+          addIngredient={this.addIngredient}
+          ingredients={this.state.ingredients}
+        />
         <fieldset onChange={this.stepChange}>
           <button onClick={this.addStep}>Add Step</button>
           {steps.map((step, i) => {
