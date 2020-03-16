@@ -20,6 +20,11 @@ class CreateRecipe extends React.Component {
         unit: "",
         ingredient: ""
       }
+    ],
+    steps: [
+      {
+        step: ""
+      }
     ]
   };
   titleChange = e => {
@@ -85,8 +90,23 @@ class CreateRecipe extends React.Component {
       console.log(e.target);
     }
   };
+  addStep = e => {
+    e.preventDefault();
+    this.setState(prevState => ({
+      steps: [...prevState.steps, { step: "" }]
+    }));
+  };
+  stepChange = e => {
+    if (["step"].includes(e.target.className)) {
+      let steps = [...this.state.steps];
+      steps[e.target.dataset.id][e.target.className] = e.target.value;
+      this.setState({ steps }, () => console.log(this.state.steps));
+    } else {
+      this.setState({ [e.target.name]: e.target.value });
+    }
+  };
   render() {
-    let { ingredients } = this.state;
+    let { ingredients, steps } = this.state;
     return (
       <form>
         <fieldset>
@@ -181,6 +201,25 @@ class CreateRecipe extends React.Component {
                   data-id={i}
                   id={ingredientID}
                   className="ingredient"
+                />
+              </div>
+            );
+          })}
+        </fieldset>
+        <fieldset onChange={this.stepChange}>
+          <button onClick={this.addStep}>Add Step</button>
+          {steps.map((step, i) => {
+            let stepID = `step-${i}`;
+
+            return (
+              <div key={i}>
+                <label>{`Step #${i + 1}`}</label>
+                <textarea
+                  type="text"
+                  name={stepID}
+                  data-id={i}
+                  id={stepID}
+                  className="step"
                 />
               </div>
             );
