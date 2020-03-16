@@ -1,5 +1,6 @@
 import React from "react";
-import requireAuth from "./requireAuth";
+import requireAuth from "../requireAuth";
+import RecipeFormTitle from "./RecipeFormTitle";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -109,16 +110,10 @@ class CreateRecipe extends React.Component {
     let { ingredients, steps } = this.state;
     return (
       <form>
-        <fieldset>
-          <label>Title</label>
-          <input
-            name="title"
-            type="text"
-            placeholder="title"
-            value={this.state.title}
-            onChange={this.titleChange}
-          />
-        </fieldset>
+        <RecipeFormTitle
+          titleChange={this.titleChange}
+          title={this.state.title}
+        />
         <fieldset>
           <label>Description</label>
           <textarea
