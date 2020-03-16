@@ -3,6 +3,7 @@ import requireAuth from "../requireAuth";
 import RecipeFormTitle from "./RecipeFormTitle";
 import RecipeFormDescription from "./RecipeFormDescription";
 import RecipeFormTime from "./RecipeFormTime";
+import RecipeFormServings from "./RecipeFormServings";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -128,16 +129,10 @@ class CreateRecipe extends React.Component {
           prepTimeChange={this.prepTimeChange}
           prepUnitChange={this.prepUnitChange}
         />
-        <fieldset>
-          <label>Servings</label>
-          <input
-            name="servings"
-            type="number"
-            placeholder="0"
-            value={this.state.servings}
-            onChange={this.servingChange}
-          />
-        </fieldset>
+        <RecipeFormServings
+          servings={this.state.servings}
+          servingChange={this.servingChange}
+        />
         <fieldset onChange={this.ingredientChange}>
           <button onClick={this.addIngredient}>Add New Ingredient</button>
           {ingredients.map((ingredient, i) => {
