@@ -2,6 +2,7 @@ import React from "react";
 import requireAuth from "../requireAuth";
 import RecipeFormTitle from "./RecipeFormTitle";
 import RecipeFormDescription from "./RecipeFormDescription";
+import RecipeFormTime from "./RecipeFormTime";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -119,38 +120,14 @@ class CreateRecipe extends React.Component {
           descriptionChange={this.descriptionChange}
           description={this.state.description}
         />
-        <fieldset>
-          <label>Cook Time</label>
-          <input
-            name="cook time"
-            type="number"
-            placeholder="cook time"
-            value={this.state.cooktime.time}
-            onChange={this.cookTimeChange}
-          />
-          <select
-            value={this.state.cooktime.unit}
-            onChange={this.cookUnitChange}
-          >
-            <option value="Mins">Mins</option>
-            <option value="Hrs">Hrs</option>
-          </select>
-          <label>Prep Time</label>
-          <input
-            name="prep time"
-            type="number"
-            placeholder="prep time"
-            value={this.state.preptime.time}
-            onChange={this.prepTimeChange}
-          />
-          <select
-            value={this.state.preptime.unit}
-            onChange={this.prepUnitChange}
-          >
-            <option value="Mins">Mins</option>
-            <option value="Hrs">Hrs</option>
-          </select>
-        </fieldset>
+        <RecipeFormTime
+          cooktime={this.state.cooktime}
+          preptime={this.state.preptime}
+          cookTimeChange={this.cookTimeChange}
+          cookUnitChange={this.cookUnitChange}
+          prepTimeChange={this.prepTimeChange}
+          prepUnitChange={this.prepUnitChange}
+        />
         <fieldset>
           <label>Servings</label>
           <input
