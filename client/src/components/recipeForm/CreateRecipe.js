@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import requireAuth from "../requireAuth";
 import RecipeFormTitle from "./RecipeFormTitle";
 import RecipeFormDescription from "./RecipeFormDescription";
@@ -10,6 +11,7 @@ import PreviewModal from "./PreviewModal";
 
 class CreateRecipe extends React.Component {
   state = {
+    _id: uuidv4(),
     title: "",
     description: "",
     cookTime: "",
