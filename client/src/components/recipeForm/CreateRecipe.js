@@ -6,6 +6,7 @@ import RecipeFormTime from "./RecipeFormTime";
 import RecipeFormServings from "./RecipeFormServings";
 import RecipeFormIngredient from "./RecipeFormIngredient";
 import RecipeFormSteps from "./RecipeFormSteps";
+import PreviewModal from "./PreviewModal";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -27,7 +28,8 @@ class CreateRecipe extends React.Component {
       {
         step: ""
       }
-    ]
+    ],
+    isOpen: false
   };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -68,6 +70,9 @@ class CreateRecipe extends React.Component {
       this.setState({ [e.target.name]: e.target.value });
     }
   };
+  handleCloseModal = () => {
+    this.setState(() => ({ isOpen: false }));
+  };
   render() {
     return (
       <div>
@@ -94,7 +99,14 @@ class CreateRecipe extends React.Component {
           addStep={this.addStep}
           steps={this.state.steps}
         />
-        <button>Submit</button>
+        <button onClick={() => this.setState(() => ({ isOpen: true }))}>
+          Preview
+        </button>
+        <PreviewModal
+          isOpen={this.state.isOpen}
+          handleCloseModal={this.handleCloseModal}
+          state={this.state}
+        />
       </div>
     );
   }
