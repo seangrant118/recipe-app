@@ -23,7 +23,7 @@ export const signin = (formProps, callback) => async dispatch => {
       "http://localhost:3090/signin",
       formProps
     );
-
+    console.log(response.data);
     dispatch({ type: AUTH_USER, payload: response.data });
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("userID", response.data.userID);
