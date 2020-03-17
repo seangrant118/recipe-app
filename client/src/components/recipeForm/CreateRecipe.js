@@ -76,6 +76,7 @@ class CreateRecipe extends React.Component {
     this.setState(() => ({ isOpen: false }));
   };
   render() {
+    console.log(this.props.user);
     return (
       <div>
         <RecipeFormTitle

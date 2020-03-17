@@ -18,7 +18,8 @@ const store = createStore(
   reducers,
   {
     auth: {
-      authenticated: localStorage.getItem("token")
+      authenticated: localStorage.getItem("token"),
+      user: localStorage.getItem("userID")
     }
   },
   composeEnhancers

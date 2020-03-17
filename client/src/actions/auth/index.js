@@ -10,6 +10,7 @@ export const signup = (formProps, callback) => async dispatch => {
     console.log(response.data);
     dispatch({ type: AUTH_USER, payload: response.data });
     localStorage.setItem("token", response.data.token);
+    localStorage.setItem("userID", response.data.userID);
     callback();
   } catch (e) {
     dispatch({ type: AUTH_ERROR, payload: "Email in use" });
@@ -23,8 +24,9 @@ export const signin = (formProps, callback) => async dispatch => {
       formProps
     );
 
-    dispatch({ type: AUTH_USER, payload: response.data.token });
+    dispatch({ type: AUTH_USER, payload: response.data });
     localStorage.setItem("token", response.data.token);
+    localStorage.setItem("userID", response.data.userID);
     callback();
   } catch (e) {
     dispatch({ type: AUTH_ERROR, payload: "Invalid login credentials" });
@@ -33,9 +35,11 @@ export const signin = (formProps, callback) => async dispatch => {
 
 export const signout = () => {
   localStorage.removeItem("token");
-
+  localStorage.removeItem("userID");
   return {
     type: AUTH_USER,
-    payload: ""
+    payload: {
+      token: ""
+    }
   };
 };
