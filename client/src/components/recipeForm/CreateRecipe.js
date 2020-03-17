@@ -11,14 +11,10 @@ class CreateRecipe extends React.Component {
   state = {
     title: "",
     description: "",
-    cooktime: {
-      time: "",
-      unit: "Mins"
-    },
-    preptime: {
-      time: "",
-      unit: "Mins"
-    },
+    cookTime: "",
+    cookTimeUnit: "Mins",
+    prepTime: "",
+    prepTimeUnit: "Mins",
     servings: 0,
     ingredients: [
       {
@@ -35,30 +31,6 @@ class CreateRecipe extends React.Component {
   };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  };
-  cookTimeChange = e => {
-    const time = e.target.value;
-    this.setState(prevState => ({
-      cooktime: { ...prevState.cooktime, time }
-    }));
-  };
-  cookUnitChange = e => {
-    const unit = e.target.value;
-    this.setState(prevState => ({
-      cooktime: { ...prevState.cooktime, unit }
-    }));
-  };
-  prepTimeChange = e => {
-    const time = e.target.value;
-    this.setState(prevState => ({
-      preptime: { ...prevState.preptime, time }
-    }));
-  };
-  prepUnitChange = e => {
-    const unit = e.target.value;
-    this.setState(prevState => ({
-      preptime: { ...prevState.preptime, unit }
-    }));
   };
   addIngredient = e => {
     e.preventDefault();
@@ -107,14 +79,7 @@ class CreateRecipe extends React.Component {
           descriptionChange={this.handleChange}
           description={this.state.description}
         />
-        <RecipeFormTime
-          cooktime={this.state.cooktime}
-          preptime={this.state.preptime}
-          cookTimeChange={this.cookTimeChange}
-          cookUnitChange={this.cookUnitChange}
-          prepTimeChange={this.prepTimeChange}
-          prepUnitChange={this.prepUnitChange}
-        />
+        <RecipeFormTime state={this.state} onChange={this.handleChange} />
         <RecipeFormServings
           servings={this.state.servings}
           servingChange={this.handleChange}
