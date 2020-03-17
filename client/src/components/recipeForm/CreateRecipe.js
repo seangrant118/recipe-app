@@ -78,7 +78,10 @@ class CreateRecipe extends React.Component {
     this.setState(() => ({ isOpen: false }));
   };
   submitRecipe = () => {
-    this.props.createRecipe();
+    const newRecipe = this.state;
+    this.props.createRecipe(newRecipe, () => {
+      this.props.history.push("/recipes/" + this.state._id);
+    });
   };
   render() {
     return (
