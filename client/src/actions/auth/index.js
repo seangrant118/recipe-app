@@ -7,8 +7,8 @@ export const signup = (formProps, callback) => async dispatch => {
       "http://localhost:3090/signup",
       formProps
     );
-
-    dispatch({ type: AUTH_USER, payload: response.data.token });
+    console.log(response.data);
+    dispatch({ type: AUTH_USER, payload: response.data });
     localStorage.setItem("token", response.data.token);
     callback();
   } catch (e) {
