@@ -41,6 +41,7 @@ const PreviewModal = props => (
         })}
       </ol>
       <button onClick={props.handleCloseModal}>Close Modal</button>
+      <button onClick={props.submitRecipe}>Submit Recipe!</button>
     </div>
   </Modal>
 );

@@ -1,5 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import { connect } from "react-redux";
+import * as actions from "../../actions/recipe";
 import requireAuth from "../requireAuth";
 import RecipeFormTitle from "./RecipeFormTitle";
 import RecipeFormDescription from "./RecipeFormDescription";
@@ -75,6 +77,9 @@ class CreateRecipe extends React.Component {
   handleCloseModal = () => {
     this.setState(() => ({ isOpen: false }));
   };
+  submitRecipe = () => {
+    this.props.createRecipe();
+  };
   render() {
     return (
       <div>
@@ -108,10 +113,11 @@ class CreateRecipe extends React.Component {
           isOpen={this.state.isOpen}
           handleCloseModal={this.handleCloseModal}
           state={this.state}
+          submitRecipe={this.submitRecipe}
         />
       </div>
     );
   }
 }
 
-export default requireAuth(CreateRecipe);
+export default connect(null, actions)(requireAuth(CreateRecipe));
