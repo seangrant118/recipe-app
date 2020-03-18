@@ -6,7 +6,7 @@ class IngredientSearch extends React.Component {
   state = {
     loaded: false
   };
-  componentWillMount() {
+  componentDidMount() {
     const id = this.props.match.params.id;
     this.props.ingredientSearchQuery(id, () => {
       this.setState({

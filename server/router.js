@@ -16,4 +16,5 @@ module.exports = function(app) {
   app.post("/createrecipe", Recipe.createrecipe);
   app.get("/recipe/:id", Recipe.getRecipe);
   app.get("/search/recipe/:id", Recipe.recipeSearch);
+  app.get("/search/ingredient/:id", Recipe.ingredientSearch);
 };
