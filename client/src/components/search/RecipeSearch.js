@@ -1,7 +1,25 @@
 import React from "react";
+import { connect } from "react-redux";
+import * as actions from "../../actions/search";
 
-const RecipeSearch = props => (
-  <div>showing results for {props.match.params.id} recipes</div>
-);
+class RecipeSearch extends React.Component {
+  state = {
+    loaded: false
+  };
+  componentDidMount() {
+    const id = this.props.match.params.id;
+  }
+  render() {
+    return (
+      <div>
+        <div>showing results for {this.props.match.params.id} recipes</div>
+      </div>
+    );
+  }
+}
 
-export default RecipeSearch;
+function mapStateToProps(state) {
+  return { recipeSearchResults: state.search.recipeSearchResults };
+}
+
+export default connect(mapStateToProps, actions)(RecipeSearch);

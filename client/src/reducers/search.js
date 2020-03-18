@@ -1,4 +1,8 @@
-import { RECIPE_SEARCH, INGREDIENT_SEARCH } from "../actions/search/types";
+import {
+  RECIPE_SEARCH,
+  INGREDIENT_SEARCH,
+  RECIPE_SEARCH_QUERY
+} from "../actions/search/types";
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -6,6 +10,8 @@ export default function(state = {}, action) {
       return { ...state, recipeSearchItem: action.payload };
     case INGREDIENT_SEARCH:
       return { ...state, recipeSearchItem: action.payload };
+    case RECIPE_SEARCH_QUERY:
+      return { ...state, recipeSearchResults: action.payload };
     default:
       return state;
   }

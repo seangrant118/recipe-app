@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import * as actions from "../actions/recipe";
 
@@ -55,4 +54,4 @@ function mapStateToProps(state) {
   return { recipe: state.recipe.recipe };
 }
 
-export default connect(mapStateToProps, actions)(withRouter(RecipeView));
+export default connect(mapStateToProps, actions)(RecipeView);
