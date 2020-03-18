@@ -15,6 +15,7 @@ class IngredientSearch extends React.Component {
     });
   }
   render() {
+    const results = this.props.ingredientSearchResults;
     const items = this.props.match.params.id.split(",");
     if (this.state.loaded) {
       return (
@@ -25,6 +26,16 @@ class IngredientSearch extends React.Component {
               <span key={i}>'{item}' </span>
             ))}
           </div>
+          {results.map((result, i) => {
+            const id = result._id;
+            const route = "/recipes/" + id;
+            return (
+              <div key={i}>
+                <div>Title: {result.title}</div>
+                <a href={route}>link to recipe</a>
+              </div>
+            );
+          })}
         </div>
       );
     } else {
