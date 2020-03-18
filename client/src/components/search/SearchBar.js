@@ -25,6 +25,7 @@ const SearchBar = props => {
     props.recipeSearch(searchItem);
     const query = searchItem;
     setSearchItem("");
+    props.recipeSearchQuery(query);
     props.history.push("/search/recipe/" + query);
   };
 

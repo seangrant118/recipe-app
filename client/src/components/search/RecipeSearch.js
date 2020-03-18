@@ -19,11 +19,12 @@ class RecipeSearch extends React.Component {
     if (this.state.loaded) {
       return (
         <div>
+          <div>Displaying results for {this.props.match.params.id} recipes</div>
           {searchResults.map((result, i) => {
             const id = result._id;
             const route = "/recipes/" + id;
             return (
-              <div>
+              <div key={i}>
                 <div>Title: {result.title}</div>
                 <a href={route}>link to recipe</a>
               </div>
