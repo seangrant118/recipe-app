@@ -1,7 +1,8 @@
 import {
   RECIPE_SEARCH,
   INGREDIENT_SEARCH,
-  RECIPE_SEARCH_QUERY
+  RECIPE_SEARCH_QUERY,
+  INGREDIENT_SEARCH_QUERY
 } from "../actions/search/types";
 
 export default function(state = {}, action) {
@@ -12,6 +13,8 @@ export default function(state = {}, action) {
       return { ...state, recipeSearchItem: action.payload };
     case RECIPE_SEARCH_QUERY:
       return { ...state, recipeSearchResults: action.payload };
+    case INGREDIENT_SEARCH_QUERY:
+      return { ...state, ingredientSearchResults: action.payload };
     default:
       return state;
   }
