@@ -22,8 +22,11 @@ const SearchBar = props => {
   const recipeQuery = e => {
     e.preventDefault();
     //adds search item to redux
+    if (searchItem.trim() === "") {
+      return false;
+    }
     props.recipeSearch(searchItem);
-    const query = searchItem;
+    const query = searchItem.trim();
     setSearchItem("");
     props.recipeSearchQuery(query);
     props.history.push("/search/recipe/" + query);
@@ -44,6 +47,9 @@ const SearchBar = props => {
 
   const ingredientQuery = e => {
     e.preventDefault();
+    if (ingArr.length === 0) {
+      return false;
+    }
     const query = ingArr;
     props.ingredientSearch(ingArr);
     props.history.push("/search/ingredient/" + query);
