@@ -8,6 +8,11 @@ class RecipeSearch extends React.Component {
   };
   componentDidMount() {
     const id = this.props.match.params.id;
+    this.props.recipeSearchQuery(id, () => {
+      this.setState({
+        loaded: true
+      });
+    });
   }
   render() {
     return (

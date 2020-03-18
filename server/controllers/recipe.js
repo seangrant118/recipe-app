@@ -45,3 +45,17 @@ exports.getRecipe = function(req, res, next) {
     res.json(recipe);
   });
 };
+
+exports.recipeSearch = function(req, res, next) {
+  const title = req.params.id;
+
+  Recipe.find({ title: { $regex: title, $options: "i" } }, "title", function(
+    err,
+    recipes
+  ) {
+    if (err) {
+      return next(err);
+    }
+    res.json(recipes);
+  });
+};

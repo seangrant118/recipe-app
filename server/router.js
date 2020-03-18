@@ -15,4 +15,5 @@ module.exports = function(app) {
   app.post("/signup", Authentication.signup);
   app.post("/createrecipe", Recipe.createrecipe);
   app.get("/recipe/:id", Recipe.getRecipe);
+  app.get("/search/recipe/:id", Recipe.recipeSearch);
 };
