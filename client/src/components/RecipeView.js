@@ -15,7 +15,7 @@ class RecipeView extends React.Component {
     });
   }
   render() {
-    const recipe = this.props.recipe;
+    const { recipe } = this.props;
     if (this.state.loaded) {
       return (
         <div>

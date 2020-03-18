@@ -15,11 +15,25 @@ class RecipeSearch extends React.Component {
     });
   }
   render() {
-    return (
-      <div>
-        <div>showing results for {this.props.match.params.id} recipes</div>
-      </div>
-    );
+    const searchResults = this.props.recipeSearchResults;
+    if (this.state.loaded) {
+      return (
+        <div>
+          {searchResults.map((result, i) => {
+            const id = result._id;
+            const route = "/recipes/" + id;
+            return (
+              <div>
+                <div>Title: {result.title}</div>
+                <a href={route}>link to recipe</a>
+              </div>
+            );
+          })}
+        </div>
+      );
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 
