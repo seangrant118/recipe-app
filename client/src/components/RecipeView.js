@@ -4,13 +4,24 @@ import { connect } from "react-redux";
 import * as actions from "../actions/recipe";
 
 class RecipeView extends React.Component {
+  state = {
+    loaded: false
+  };
   componentDidMount() {
     const id = this.props.match.params.id;
-    console.log(id);
-    this.props.getRecipe(id);
+    this.props.getRecipe(id, () => {
+      this.setState({
+        loaded: true
+      });
+    });
   }
   render() {
-    return <div>viewing recipe with id of {this.props.match.params.id}</div>;
+    const recipe = this.props.recipe;
+    if (this.state.loaded) {
+      return <div>Title: {recipe.title}</div>;
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 
