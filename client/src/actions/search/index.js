@@ -18,5 +18,18 @@ export const recipeSearchQuery = (id, callback) => async dispatch => {
     );
     dispatch({ type: RECIPE_SEARCH_QUERY, payload: response.data });
     callback();
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const ingredientSearchQuery = (id, callback) => async dispatch => {
+  try {
+    const response = await axios.get(
+      "http://localhost:3090/search/ingredient/" + id
+    );
+    console.log(response);
+  } catch (e) {
+    console.log(e);
+  }
 };
