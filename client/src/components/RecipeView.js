@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
+import * as actions from "../actions/recipe";
 
 class RecipeView extends React.Component {
   render() {
