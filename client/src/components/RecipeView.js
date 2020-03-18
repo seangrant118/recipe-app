@@ -6,6 +6,7 @@ import * as actions from "../actions/recipe";
 class RecipeView extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id;
+    console.log(id);
     this.props.getRecipe(id);
   }
   render() {

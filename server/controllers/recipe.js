@@ -34,3 +34,14 @@ exports.createrecipe = function(req, res, next) {
     res.send(recipe);
   });
 };
+
+exports.getRecipe = function(req, res, next) {
+  const id = req.params.id;
+
+  Recipe.findById(id, function(err, recipe) {
+    if (err) {
+      return next(err);
+    }
+    res.json(recipe);
+  });
+};
