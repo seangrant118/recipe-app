@@ -34,6 +34,7 @@ export const ingredientSearchQuery = (id, callback) => async dispatch => {
       "http://localhost:3090/search/ingredient/" + id
     );
     dispatch({ type: INGREDIENT_SEARCH_QUERY, payload: response.data });
+    callback();
   } catch (e) {
     console.log(e);
   }

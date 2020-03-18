@@ -52,6 +52,7 @@ const SearchBar = props => {
     }
     const query = ingArr;
     props.ingredientSearch(ingArr);
+    props.ingredientSearchQuery(ingArr);
     props.history.push("/search/ingredient/" + query);
   };
 
