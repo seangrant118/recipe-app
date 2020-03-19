@@ -49,15 +49,16 @@ exports.getRecipe = function(req, res, next) {
 exports.recipeSearch = function(req, res, next) {
   const title = req.params.id;
 
-  Recipe.find({ title: { $regex: title, $options: "i" } }, "title", function(
-    err,
-    recipes
-  ) {
-    if (err) {
-      return next(err);
+  Recipe.find(
+    { title: { $regex: title, $options: "i" } },
+    "title description",
+    function(err, recipes) {
+      if (err) {
+        return next(err);
+      }
+      res.json(recipes);
     }
-    res.json(recipes);
-  });
+  );
 };
 
 exports.ingredientSearch = function(req, res, next) {
@@ -66,7 +67,7 @@ exports.ingredientSearch = function(req, res, next) {
   const [a, b = a, c = a, d = a] = itemsArr;
   Recipe.find(
     { "ingredients.ingredient": { $all: [a, b, c, d] } },
-    "title",
+    "title description",
     function(err, recipes) {
       if (err) {
         return next(err);

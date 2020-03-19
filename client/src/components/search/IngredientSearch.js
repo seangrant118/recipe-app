@@ -30,7 +30,14 @@ class IngredientSearch extends React.Component {
           {results.map((result, i) => {
             const id = result._id;
             const route = "/recipes/" + id;
-            return <RecipeCard route={route} title={result.title} key={i} />;
+            return (
+              <RecipeCard
+                description={result.description}
+                route={route}
+                title={result.title}
+                key={i}
+              />
+            );
           })}
         </div>
       );
