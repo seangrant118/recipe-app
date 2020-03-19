@@ -33,6 +33,7 @@ class CreateRecipe extends React.Component {
         step: ""
       }
     ],
+    userID: this.props.user,
     isOpen: false
   };
   handleChange = e => {
