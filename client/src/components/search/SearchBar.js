@@ -25,7 +25,7 @@ const SearchBar = props => {
     if (searchItem.trim() === "") {
       return false;
     }
-    props.recipeSearch(searchItem);
+    // props.recipeSearch(searchItem);
     const query = searchItem.trim();
     setSearchItem("");
     props.recipeSearchQuery(query);
@@ -51,7 +51,7 @@ const SearchBar = props => {
       return false;
     }
     const query = ingArr;
-    props.ingredientSearch(ingArr);
+    // props.ingredientSearch(ingArr);
     props.ingredientSearchQuery(ingArr);
     props.history.push("/search/ingredient/" + query);
   };

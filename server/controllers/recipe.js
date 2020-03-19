@@ -64,7 +64,6 @@ exports.ingredientSearch = function(req, res, next) {
   const items = req.params.id.toUpperCase();
   const itemsArr = items.split(",");
   const [a, b = a, c = a, d = a] = itemsArr;
-  console.log(a, b, c, d);
   Recipe.find(
     { "ingredients.ingredient": { $all: [a, b, c, d] } },
     "title",

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/search";
+import RecipeCard from "../RecipeCard";
 
 class RecipeSearch extends React.Component {
   state = {
@@ -23,12 +24,7 @@ class RecipeSearch extends React.Component {
           {searchResults.map((result, i) => {
             const id = result._id;
             const route = "/recipes/" + id;
-            return (
-              <div key={i}>
-                <div>Title: {result.title}</div>
-                <a href={route}>link to recipe</a>
-              </div>
-            );
+            return <RecipeCard route={route} title={result.title} key={i} />;
           })}
         </div>
       );
