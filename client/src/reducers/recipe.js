@@ -12,7 +12,7 @@ export default function(state = {}, action) {
     case GET_RECIPE:
       return { ...state, recipe: action.payload };
     case DELETE_RECIPE:
-      return { ...state, recipe: "", errorMessage: action.payload };
+      return { ...state, recipe: action.payload };
     case CREATE_ERROR:
       return { ...state, errorMessage: action.payload };
     default:

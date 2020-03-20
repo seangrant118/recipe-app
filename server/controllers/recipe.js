@@ -84,10 +84,11 @@ exports.ingredientSearch = function(req, res, next) {
 
 exports.deleteRecipe = function(req, res, next) {
   const _id = req.params.id;
-  Recipe.deleteOne(_id, function(err, result) {
+  Recipe.findByIdAndDelete(_id, function(err, result) {
     if (err) {
       return next(err);
     }
+    console.log(result);
     res.send(result);
   });
 };

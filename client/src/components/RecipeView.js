@@ -14,6 +14,13 @@ class RecipeView extends React.Component {
       });
     });
   }
+  handleDelete = () => {
+    this.setState({ loading: false });
+    const id = this.props.match.params.id;
+    this.props.deleteRecipe(id, () => {
+      this.props.history.push("/");
+    });
+  };
   render() {
     const { recipe } = this.props;
     if (this.state.loaded) {
@@ -45,7 +52,7 @@ class RecipeView extends React.Component {
           <div>Created By: {recipe.user.email}</div>
           {recipe.user._id === this.props.user && (
             <div>
-              <button>Delete</button>
+              <button onClick={this.handleDelete}>Delete</button>
               <button>edit</button>
             </div>
           )}

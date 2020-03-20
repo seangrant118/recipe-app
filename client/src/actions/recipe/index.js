@@ -37,5 +37,6 @@ export const deleteRecipe = (id, callback) => async dispatch => {
     callback();
   } catch (e) {
     dispatch({ type: CREATE_ERROR, payload: "Could not delete recipe" });
+    callback();
   }
 };
