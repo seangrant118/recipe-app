@@ -32,6 +32,7 @@ class RecipeView extends React.Component {
         <div>
           <div>Title: {recipe.title}</div>
           <div>Description: {recipe.description}</div>
+          <img src={recipe.image} alt="recipe" />
           <div>
             Cook Time: {recipe.cookTime} {recipe.cookTimeUnit}
           </div>

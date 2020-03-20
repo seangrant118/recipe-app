@@ -35,6 +35,7 @@ class IngredientSearch extends React.Component {
                 description={result.description}
                 route={route}
                 title={result.title}
+                image={result.image}
                 key={i}
               />
             );

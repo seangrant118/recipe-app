@@ -29,6 +29,7 @@ class RecipeSearch extends React.Component {
                 route={route}
                 description={result.description}
                 title={result.title}
+                image={result.image}
                 key={i}
               />
             );

@@ -1,6 +1,9 @@
 import React from "react";
 import Modal from "react-modal";
-
+const style = {
+  width: "50px",
+  height: "50px"
+};
 const PreviewModal = props => (
   <Modal
     isOpen={props.isOpen}
@@ -13,6 +16,7 @@ const PreviewModal = props => (
     <div>
       <h1>{props.state.title}</h1>
       <p>{props.state.description}</p>
+      <img style={style} src={props.state.image} alt="recipe" />
       <p>
         Cook Time: {props.state.cookTime} {props.state.cookTimeUnit}
       </p>

@@ -4,6 +4,7 @@ const RecipeCard = props => {
   return (
     <div>
       <h3>{props.title}</h3>
+      <img src={props.image} alt="recipe" />
       <p>
         <em>{props.description}</em>
       </p>

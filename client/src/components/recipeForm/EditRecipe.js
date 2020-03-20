@@ -9,12 +9,15 @@ import RecipeFormServings from "./RecipeFormServings";
 import RecipeFormIngredient from "./RecipeFormIngredient";
 import RecipeFormSteps from "./RecipeFormSteps";
 import PreviewModal from "./PreviewModal";
+import RecipeFormImage from "./RecipeFormImage";
+import { storage } from "../../firebase";
 
 class CreateRecipe extends React.Component {
   state = {
     _id: this.props.recipe._id,
     title: this.props.recipe.title,
     description: this.props.recipe.description,
+    image: this.props.recipe.image,
     cookTime: this.props.recipe.cookTime,
     cookTimeUnit: this.props.recipe.cookTimeUnit,
     prepTime: this.props.recipe.prepTime,
@@ -85,6 +88,36 @@ class CreateRecipe extends React.Component {
       });
     });
   };
+  handleImageChange = e => {
+    if (e.target.files[0]) {
+      this.setState({
+        image: URL.createObjectURL(e.target.files[0])
+      });
+      let currentImageName = "firebase-image-" + Date.now();
+      let uploadImage = storage
+        .ref(`images/${currentImageName}`)
+        .put(e.target.files[0]);
+
+      uploadImage.on(
+        "state_changed",
+        snapshot => {},
+        error => {
+          console.log(error);
+        },
+        () => {
+          storage
+            .ref("images")
+            .child(currentImageName)
+            .getDownloadURL()
+            .then(url => {
+              this.setState({
+                image: url
+              });
+            });
+        }
+      );
+    }
+  };
   render() {
     if (this.state.loaded) {
       return (
@@ -96,6 +129,10 @@ class CreateRecipe extends React.Component {
           <RecipeFormDescription
             descriptionChange={this.handleChange}
             description={this.state.description}
+          />
+          <RecipeFormImage
+            handleImageChange={this.handleImageChange}
+            image={this.state.image}
           />
           <RecipeFormTime state={this.state} onChange={this.handleChange} />
           <RecipeFormServings
