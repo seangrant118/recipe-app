@@ -22,7 +22,7 @@ const recipeSchema = new Schema({
       step: String
     }
   ],
-  userID: { type: Schema.Types.ObjectId, ref: "user" }
+  user: { type: Schema.Types.ObjectId, ref: "user" }
 });
 
 const ModelClass = mongoose.model("recipe", recipeSchema);

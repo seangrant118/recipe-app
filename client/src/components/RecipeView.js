@@ -42,6 +42,7 @@ class RecipeView extends React.Component {
               return <li key={i}>{step.step}</li>;
             })}
           </ol>
+          <div>Created By: {recipe.user.email}</div>
         </div>
       );
     } else {

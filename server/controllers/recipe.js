@@ -11,7 +11,8 @@ exports.createrecipe = function(req, res, next) {
     prepTimeUnit,
     servings,
     ingredients,
-    steps
+    steps,
+    userID
   } = req.body;
 
   const recipe = new Recipe({
@@ -24,7 +25,8 @@ exports.createrecipe = function(req, res, next) {
     prepTimeUnit,
     servings,
     ingredients,
-    steps
+    steps,
+    user: userID
   });
 
   recipe.save(function(err) {
@@ -38,12 +40,15 @@ exports.createrecipe = function(req, res, next) {
 exports.getRecipe = function(req, res, next) {
   const id = req.params.id;
 
-  Recipe.findById(id, function(err, recipe) {
-    if (err) {
-      return next(err);
-    }
-    res.json(recipe);
-  });
+  Recipe.findById(id)
+    .populate("user", "_id email")
+    .exec(function(err, recipe) {
+      if (err) {
+        return next(err);
+      }
+      console.log(recipe.user);
+      res.json(recipe);
+    });
 };
 
 exports.recipeSearch = function(req, res, next) {
