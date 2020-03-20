@@ -76,9 +76,9 @@ class CreateRecipe extends React.Component {
   handleCloseModal = () => {
     this.setState(() => ({ isOpen: false }));
   };
-  submitRecipe = () => {
+  editRecipe = () => {
     const newRecipe = this.state;
-    this.props.createRecipe(newRecipe, () => {
+    this.props.editRecipe(newRecipe, () => {
       this.props.history.push("/recipes/" + this.state._id);
     });
   };
@@ -116,7 +116,7 @@ class CreateRecipe extends React.Component {
             isOpen={this.state.isOpen}
             handleCloseModal={this.handleCloseModal}
             state={this.state}
-            submitRecipe={this.submitRecipe}
+            submitRecipe={this.editRecipe}
           />
         </div>
       );

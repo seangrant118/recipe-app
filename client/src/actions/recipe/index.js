@@ -3,7 +3,8 @@ import {
   CREATE_RECIPE,
   CREATE_ERROR,
   GET_RECIPE,
-  DELETE_RECIPE
+  DELETE_RECIPE,
+  EDIT_RECIPE
 } from "./types";
 
 export const createRecipe = (newRecipe, callback) => async dispatch => {
@@ -39,5 +40,15 @@ export const deleteRecipe = (id, callback) => async dispatch => {
   } catch (e) {
     dispatch({ type: CREATE_ERROR, payload: "Could not delete recipe" });
     callback();
+  }
+};
+
+export const editRecipe = (id, callback) => async dispatch => {
+  try {
+    const response = axios.patch("http://localhost:3090/recipe/" + id);
+    dispatch({ type: EDIT_RECIPE, payload: response.data });
+    callback();
+  } catch (e) {
+    dispatch({ type: CREATE_ERROR, payload: "Could not edit recipe" });
   }
 };
