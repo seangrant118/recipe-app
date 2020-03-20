@@ -43,6 +43,7 @@ class RecipeView extends React.Component {
             })}
           </ol>
           <div>Created By: {recipe.user.email}</div>
+          {recipe.user._id === this.props.user && <button>Delete</button>}
         </div>
       );
     } else {
@@ -52,7 +53,7 @@ class RecipeView extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { recipe: state.recipe.recipe };
+  return { recipe: state.recipe.recipe, user: state.auth.user };
 }
 
 export default connect(mapStateToProps, actions)(RecipeView);
