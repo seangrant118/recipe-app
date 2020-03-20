@@ -20,6 +20,7 @@ const RecipeFormSteps = props => {
                   id={stepID}
                   className="step"
                   value={step.step}
+                  onChange={props.stepChange}
                 />
               </div>
             );
