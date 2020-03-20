@@ -22,6 +22,7 @@ const RecipeFormIngredient = props => {
                   data-id={i}
                   id={quantityID}
                   className="quantity"
+                  value={ingredient.quantity}
                 />
                 <label htmlFor={unitID}>Unit</label>
                 <select name={unitID} data-id={i} id={unitID} className="unit">
@@ -35,6 +36,7 @@ const RecipeFormIngredient = props => {
                   data-id={i}
                   id={ingredientID}
                   className="ingredient"
+                  value={ingredient.ingredient}
                 />
               </div>
             );

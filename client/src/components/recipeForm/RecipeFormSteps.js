@@ -19,6 +19,7 @@ const RecipeFormSteps = props => {
                   data-id={i}
                   id={stepID}
                   className="step"
+                  value={step.step}
                 />
               </div>
             );

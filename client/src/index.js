@@ -13,13 +13,17 @@ const composeEnhancers = compose(
   applyMiddleware(reduxThunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
+const lsRecipe = localStorage.getItem("recipe");
+const recipe = JSON.parse(lsRecipe);
 const store = createStore(
   reducers,
   {
     auth: {
       authenticated: localStorage.getItem("token"),
       user: localStorage.getItem("userID")
+    },
+    recipe: {
+      recipe
     }
   },
   composeEnhancers

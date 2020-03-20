@@ -21,6 +21,10 @@ class RecipeView extends React.Component {
       this.props.history.push("/");
     });
   };
+  editRecipe = () => {
+    const id = this.props.match.params.id;
+    this.props.history.push("/edit/recipe/" + id);
+  };
   render() {
     const { recipe } = this.props;
     if (this.state.loaded) {
@@ -53,7 +57,7 @@ class RecipeView extends React.Component {
           {recipe.user._id === this.props.user && (
             <div>
               <button onClick={this.handleDelete}>Delete</button>
-              <button>edit</button>
+              <button onClick={this.editRecipe}>edit</button>
             </div>
           )}
         </div>
