@@ -43,7 +43,12 @@ class RecipeView extends React.Component {
             })}
           </ol>
           <div>Created By: {recipe.user.email}</div>
-          {recipe.user._id === this.props.user && <button>Delete</button>}
+          {recipe.user._id === this.props.user && (
+            <div>
+              <button>Delete</button>
+              <button>edit</button>
+            </div>
+          )}
         </div>
       );
     } else {

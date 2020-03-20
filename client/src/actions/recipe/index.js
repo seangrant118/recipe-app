@@ -1,5 +1,10 @@
 import axios from "axios";
-import { CREATE_RECIPE, CREATE_ERROR, GET_RECIPE } from "./types";
+import {
+  CREATE_RECIPE,
+  CREATE_ERROR,
+  GET_RECIPE,
+  DELETE_RECIPE
+} from "./types";
 
 export const createRecipe = (newRecipe, callback) => async dispatch => {
   try {
@@ -22,5 +27,15 @@ export const getRecipe = (id, callback) => async dispatch => {
     callback();
   } catch (e) {
     dispatch({ type: CREATE_ERROR, payload: "There was an error" });
+  }
+};
+
+export const deleteRecipe = (id, callback) => async dispatch => {
+  try {
+    const response = await axios.delete("http://localhost:3090/recipe/" + id);
+    dispatch({ type: DELETE_RECIPE, payload: response.data });
+    callback();
+  } catch (e) {
+    dispatch({ type: CREATE_ERROR, payload: "Could not delete recipe" });
   }
 };
