@@ -5,6 +5,7 @@ exports.createrecipe = function(req, res, next) {
     _id,
     title,
     description,
+    image,
     cookTime,
     cookTimeUnit,
     prepTime,
@@ -19,6 +20,7 @@ exports.createrecipe = function(req, res, next) {
     _id,
     title,
     description,
+    image,
     cookTime,
     cookTimeUnit,
     prepTime,
@@ -56,7 +58,7 @@ exports.recipeSearch = function(req, res, next) {
 
   Recipe.find(
     { title: { $regex: title, $options: "i" } },
-    "title description",
+    "title description image",
     function(err, recipes) {
       if (err) {
         return next(err);
@@ -72,7 +74,7 @@ exports.ingredientSearch = function(req, res, next) {
   const [a, b = a, c = a, d = a] = itemsArr;
   Recipe.find(
     { "ingredients.ingredient": { $all: [a, b, c, d] } },
-    "title description",
+    "title description image",
     function(err, recipes) {
       if (err) {
         return next(err);
@@ -99,6 +101,7 @@ exports.editRecipe = function(req, res, next) {
     _id,
     title,
     description,
+    image,
     cookTime,
     cookTimeUnit,
     prepTime,
@@ -113,6 +116,7 @@ exports.editRecipe = function(req, res, next) {
     {
       title,
       description,
+      image,
       cookTime,
       cookTimeUnit,
       prepTime,
