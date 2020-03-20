@@ -43,9 +43,13 @@ export const deleteRecipe = (id, callback) => async dispatch => {
   }
 };
 
-export const editRecipe = (id, edited, callback) => async dispatch => {
+export const editRecipe = (editedRecipe, callback) => async dispatch => {
+  let id = editedRecipe._id;
   try {
-    const response = axios.patch("http://localhost:3090/recipe/" + id, edited);
+    const response = axios.put(
+      "http://localhost:3090/recipe/" + id,
+      editedRecipe
+    );
     dispatch({ type: EDIT_RECIPE, payload: response.data });
     callback();
   } catch (e) {

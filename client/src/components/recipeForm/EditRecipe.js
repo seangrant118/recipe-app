@@ -79,8 +79,10 @@ class CreateRecipe extends React.Component {
   editRecipe = () => {
     const id = this.props.match.params.id;
     const editedRecipe = this.state;
-    this.props.editRecipe(id, editedRecipe, () => {
-      this.props.history.push("/recipes/" + this.state._id);
+    this.props.editRecipe(editedRecipe, () => {
+      this.props.getRecipe(id, () => {
+        this.props.history.push("/recipes/" + id);
+      });
     });
   };
   render() {

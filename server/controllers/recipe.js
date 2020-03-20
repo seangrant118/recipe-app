@@ -92,3 +92,41 @@ exports.deleteRecipe = function(req, res, next) {
     res.send(result);
   });
 };
+
+exports.editRecipe = function(req, res, next) {
+  console.log(req.body);
+  const {
+    _id,
+    title,
+    description,
+    cookTime,
+    cookTimeUnit,
+    prepTime,
+    prepTimeUnit,
+    servings,
+    ingredients,
+    steps,
+    userID
+  } = req.body;
+  Recipe.findByIdAndUpdate(
+    _id,
+    {
+      title,
+      description,
+      cookTime,
+      cookTimeUnit,
+      prepTime,
+      prepTimeUnit,
+      servings,
+      ingredients,
+      steps,
+      userID
+    },
+    function(err, edited) {
+      if (err) {
+        return next(err);
+      }
+      res.send(edited);
+    }
+  );
+};
