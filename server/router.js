@@ -17,4 +17,5 @@ module.exports = function(app) {
   app.get("/recipe/:id", Recipe.getRecipe);
   app.get("/search/recipe/:id", Recipe.recipeSearch);
   app.get("/search/ingredient/:id", Recipe.ingredientSearch);
+  app.delete("/recipe/:id", Recipe.deleteRecipe);
 };
