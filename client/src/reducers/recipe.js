@@ -1,7 +1,8 @@
 import {
   CREATE_RECIPE,
   CREATE_ERROR,
-  GET_RECIPE
+  GET_RECIPE,
+  DELETE_RECIPE
 } from "../actions/recipe/types";
 
 export default function(state = {}, action) {
@@ -10,6 +11,8 @@ export default function(state = {}, action) {
       return { ...state, recipe: action.payload };
     case GET_RECIPE:
       return { ...state, recipe: action.payload };
+    case DELETE_RECIPE:
+      return { ...state, recipe: "", errorMessage: action.payload };
     case CREATE_ERROR:
       return { ...state, errorMessage: action.payload };
     default:
