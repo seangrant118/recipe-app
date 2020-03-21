@@ -10,7 +10,7 @@ import RecipeFormIngredient from "./RecipeFormIngredient";
 import RecipeFormSteps from "./RecipeFormSteps";
 import PreviewModal from "./PreviewModal";
 import RecipeFormImage from "./RecipeFormImage";
-import { storage } from "../../firebase";
+import { storage } from "../../fb";
 
 class CreateRecipe extends React.Component {
   state = {
