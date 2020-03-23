@@ -11,11 +11,32 @@
   background: white;
   opacity: 75%;
   border-radius: 10px;
-  padding: 0.3em 0.2em;
+  padding: 1em 0.75em;
   text-align: center;
   width: 17.5rem;
 }
 .layout-title {
   margin: 0;
+}
+
+.layout-subtitle {
+  font-style: italic;
+}
+
+.btn-browse {
+  border: none;
+  background: rgb(106, 212, 106);
+  box-shadow: 2px 3px rgb(101, 155, 101);
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0.5em;
+}
+
+.a-browse {
+  text-decoration: none;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 2px green;
 }
