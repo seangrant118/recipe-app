@@ -17,6 +17,8 @@
 }
 .layout-title {
   margin: 0;
+  color: rgb(106, 212, 106);
+  text-shadow: 2px 2px 2px green, 6px 6px 6px white;
 }
 
 .layout-subtitle {
@@ -32,6 +34,9 @@
   font-weight: 300;
   line-height: 1;
   padding: 0.5em;
+}
+.btn-browse:hover {
+  background: rgb(88, 175, 88);
 }
 
 .a-browse {
