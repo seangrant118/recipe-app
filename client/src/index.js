@@ -8,6 +8,7 @@ import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import AppRouter from "./routers/AppRouter";
 import reducers from "./reducers";
+import "./styles/base.css";
 
 const composeEnhancers = compose(
   applyMiddleware(reduxThunk),

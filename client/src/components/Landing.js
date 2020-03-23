@@ -1,12 +1,18 @@
 import React from "react";
+import "./styles/Landing.css";
 
 const Landing = () => {
   return (
-    <div>
-      <div>Landing Page</div>
-      <button>
-        <a href="/home">Browse Recipes</a>
-      </button>
+    <div className="layout">
+      <div className="layout-container">
+        <h1 className="layout-title">Ma's Cookbook</h1>
+        <p>Recipes so good I had to share</p>
+        <button className="btn-browse">
+          <a className="a-browse" href="/home">
+            Begin Browsing Recipes
+          </a>
+        </button>
+      </div>
     </div>
   );
 };
