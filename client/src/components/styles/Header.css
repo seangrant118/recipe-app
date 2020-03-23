@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 4em;
+  background-color: rgb(106, 212, 106);
 }
 
 .header a {
@@ -20,7 +21,8 @@
 }
 
 .nav-link {
-  text-decoration: underline;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px green;
   color: white;
   background-color: rgb(106, 212, 106);
   padding: 1rem;
