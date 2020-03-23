@@ -11,6 +11,12 @@
 
 .search-container {
   display: flex;
+  width: 50%;
+  height: 100%;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
 .nav-link {
@@ -24,4 +30,42 @@
 
 .nav-link:hover {
   background: rgb(88, 175, 88);
+}
+
+.toggle-search {
+  width: 25%;
+  height: 90%;
+}
+
+.search-form {
+  width: 75%;
+  height: 90%;
+}
+
+.search-input {
+  width: 80%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-search-btn {
+  width: 19%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.add-button {
+  width: 5%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ingredient-search-btn {
+  width: 14%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

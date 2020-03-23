@@ -59,18 +59,22 @@ const SearchBar = props => {
   if (searchToggle === "recipe") {
     return (
       <div className="search-container">
-        <button onClick={() => setSearchToggle("ingredient")}>
+        <button
+          className="toggle-search"
+          onClick={() => setSearchToggle("ingredient")}
+        >
           Search by ingredient
         </button>
-        <form onSubmit={recipeQuery}>
+        <form className="search-form" onSubmit={recipeQuery}>
           <input
             type="text"
             name="recipe"
             placeholder="Search for a recipe"
             onChange={onSearchChange}
             value={searchItem}
+            className="search-input"
           />
-          <button>Search</button>
+          <button className="recipe-search-btn">Search</button>
           <div>{props.recipeSearchItem}</div>
         </form>
       </div>
@@ -78,20 +82,28 @@ const SearchBar = props => {
   } else {
     return (
       <div className="search-container">
-        <button onClick={() => setSearchToggle("recipe")}>
+        <button
+          className="toggle-search"
+          onClick={() => setSearchToggle("recipe")}
+        >
           Search by recipe
         </button>
-        <form onSubmit={addIngredient}>
+        <form className="search-form" onSubmit={addIngredient}>
           <input
             type="text"
             name="ingredient"
             placeholder="Search by ingredient"
             value={searchItem}
             onChange={onSearchChange}
+            className="search-input"
           />
-          <button>+</button>
+
+          <button className="add-button">+</button>
+          <button className="ingredient-search-btn" onClick={ingredientQuery}>
+            search
+          </button>
         </form>
-        <button onClick={ingredientQuery}>search</button>
+
         {ingArr.map((ing, i) => (
           <li key={i}>{ing}</li>
         ))}
