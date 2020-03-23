@@ -9,9 +9,13 @@
 }
 .layout-container {
   background: white;
-  opacity: 50%;
+  opacity: 75%;
   border-radius: 10px;
   padding: 0.3em 0.2em;
   text-align: center;
-  width: 25rem;
+  width: 17.5rem;
+}
+.layout-title {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
