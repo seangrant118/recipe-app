@@ -1,6 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 4em;
 }
 
 .header a {
@@ -9,4 +11,17 @@
 
 .search-container {
   display: flex;
+}
+
+.nav-link {
+  text-decoration: underline;
+  color: white;
+  background-color: rgb(106, 212, 106);
+  padding: 1rem;
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+
+.nav-link:hover {
+  background: rgb(88, 175, 88);
 }

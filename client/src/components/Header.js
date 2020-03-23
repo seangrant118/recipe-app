@@ -10,16 +10,26 @@ class Header extends React.Component {
     if (this.props.authenticated) {
       return (
         <div>
-          <Link to="/signout">Sign Out</Link>
-          <Link to="/feature">Feature</Link>
-          <Link to="/createrecipe">Create Recipe</Link>
+          <Link className="nav-link" to="/signout">
+            Sign Out
+          </Link>
+          <Link className="nav-link" to="/feature">
+            Feature
+          </Link>
+          <Link className="nav-link" to="/createrecipe">
+            Create Recipe
+          </Link>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to="/signup">Signup</Link>
-          <Link to="/signin">Signin</Link>
+          <Link className="nav-link" to="/signup">
+            Signup
+          </Link>
+          <Link className="nav-link" to="/signin">
+            Signin
+          </Link>
         </div>
       );
     }
@@ -27,7 +37,9 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <Link to="/">Redux Auth</Link>
+        <Link className="nav-link" to="/">
+          Redux Auth
+        </Link>
         <SearchBar />
         {this.renderLinks()}
       </div>
