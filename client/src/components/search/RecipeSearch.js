@@ -18,24 +18,34 @@ class RecipeSearch extends React.Component {
   render() {
     const searchResults = this.props.recipeSearchResults;
     if (this.state.loaded) {
-      return (
-        <div>
-          <div>Displaying results for {this.props.match.params.id} recipes</div>
-          {searchResults.map((result, i) => {
-            const id = result._id;
-            const route = "/recipes/" + id;
-            return (
-              <RecipeCard
-                route={route}
-                description={result.description}
-                title={result.title}
-                image={result.image}
-                key={i}
-              />
-            );
-          })}
-        </div>
-      );
+      if (this.searchResults && this.searchResults.length > 0) {
+        return (
+          <div>
+            <div>
+              Displaying results for {this.props.match.params.id} recipes
+            </div>
+            {searchResults.map((result, i) => {
+              const id = result._id;
+              const route = "/recipes/" + id;
+              return (
+                <RecipeCard
+                  route={route}
+                  description={result.description}
+                  title={result.title}
+                  image={result.image}
+                  key={i}
+                />
+              );
+            })}
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            We couldn't find any {this.props.match.params.id} recipes :(
+          </div>
+        );
+      }
     } else {
       return <div>Loading...</div>;
     }
