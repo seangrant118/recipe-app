@@ -3,6 +3,7 @@ import { reduxForm, Field } from "redux-form";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../../actions/auth";
+import { FaLock, FaUserAlt } from "react-icons/fa";
 
 class Signup extends React.Component {
   onSubmit = formProps => {
@@ -23,6 +24,9 @@ class Signup extends React.Component {
           onSubmit={handleSubmit(this.onSubmit)}
         >
           <fieldset>
+            <div className="icon-container">
+              <FaUserAlt className="input-icon" />
+            </div>
             <Field
               className="input-field"
               name="email"
@@ -33,6 +37,9 @@ class Signup extends React.Component {
             />
           </fieldset>
           <fieldset>
+            <div className="icon-container">
+              <FaLock className="input-icon" />
+            </div>
             <Field
               className="input-field"
               name="password"
