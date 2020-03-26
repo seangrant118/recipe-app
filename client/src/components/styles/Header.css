@@ -61,7 +61,7 @@
 
 .search-input {
   width: 80%;
-  height: 100%;
+  height: 105%;
   margin: 0 0.2%;
   padding: 0;
   border: none;
@@ -69,6 +69,8 @@
 
 .btn {
   border: none;
+  padding: 0;
+  font-size: 80%;
 }
 
 .recipe-search-btn {
@@ -94,4 +96,8 @@
 
 input::placeholder {
   text-align: center;
+}
+
+input::placeholder {
+  font-size: 150%;
 }
