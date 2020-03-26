@@ -14,28 +14,43 @@ class Signup extends React.Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)}>
-        <fieldset>
-          <label>Email</label>
-          <Field
-            name="email"
-            type="text"
-            component="input"
-            autoComplete="off"
-          />
-        </fieldset>
-        <fieldset>
-          <label>Password</label>
-          <Field
-            name="password"
-            type="password"
-            component="input"
-            autoComplete="off"
-          />
-        </fieldset>
-        <div>{this.props.errorMessage}</div>
-        <button>Signup</button>
-      </form>
+      <div className="credentials-container">
+        <div className="instructions">
+          <h2>Create a username and password</h2>
+        </div>
+        <form
+          className="credentials-form"
+          onSubmit={handleSubmit(this.onSubmit)}
+        >
+          <fieldset>
+            <Field
+              className="input-field"
+              name="email"
+              type="text"
+              component="input"
+              autoComplete="off"
+              placeholder="Username"
+            />
+          </fieldset>
+          <fieldset>
+            <Field
+              className="input-field"
+              name="password"
+              type="password"
+              component="input"
+              autoComplete="off"
+              placeholder="Password"
+            />
+          </fieldset>
+          <div>{this.props.errorMessage}</div>
+          <button className="btn-submit">Signup</button>
+          <div className="redirect-container">
+            <a className="btn-redirect" href="/signin">
+              Have an account? Sign in.
+            </a>
+          </div>
+        </form>
+      </div>
     );
   }
 }

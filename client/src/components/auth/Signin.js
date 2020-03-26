@@ -31,7 +31,7 @@ class Signin extends React.Component {
               name="email"
               type="text"
               component="input"
-              placeholder="username"
+              placeholder="Username"
             />
           </fieldset>
           <fieldset>
@@ -40,7 +40,7 @@ class Signin extends React.Component {
               name="password"
               type="password"
               component="input"
-              placeholder="password"
+              placeholder="Password"
             />
           </fieldset>
           <div>{this.props.errorMessage}</div>

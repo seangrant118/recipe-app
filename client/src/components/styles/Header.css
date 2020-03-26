@@ -30,7 +30,7 @@
 
 .nav-link {
   text-decoration: none;
-  text-shadow: 2px 2px 2px green;
+  text-shadow: 1px 1px 1px rgb(0, 158, 0);
   font-size: 1em;
   color: white;
   background-color: rgb(106, 212, 106);
