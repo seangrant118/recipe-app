@@ -5,6 +5,7 @@
   height: 4em;
   background-color: rgb(106, 212, 106);
   border-bottom: 1px solid rgba(88, 175, 88, 0.7);
+  border-top: 1px solid rgba(88, 175, 88, 0.7);
 }
 
 .header a {
@@ -48,41 +49,46 @@
 }
 
 .toggle-search {
-  width: 25%;
-  height: 99%;
+  width: 20%;
+  height: 100%;
 }
 
 .search-form {
-  width: 75%;
+  width: 80%;
   height: 100%;
-  margin: 1% 0;
+  overflow-y: hidden;
 }
 
 .search-input {
   width: 80%;
   height: 100%;
-  margin: 0;
+  margin: 0 0.2%;
   padding: 0;
+  border: none;
+}
+
+.btn {
+  border: none;
 }
 
 .recipe-search-btn {
-  width: 20%;
+  width: 19.4%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .add-button {
-  width: 5%;
+  width: 9.6%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .ingredient-search-btn {
-  width: 14%;
+  width: 9.6%;
   height: 100%;
-  margin: 0;
+  margin: 0 0 0 0.2%;
   padding: 0;
 }
 

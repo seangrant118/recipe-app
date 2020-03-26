@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import * as actions from "../../actions/search";
+import { FaSearch, FaPlus } from "react-icons/fa";
 
 const ingArr = [];
 
@@ -61,7 +62,7 @@ const SearchBar = props => {
       <div className="search-container">
         <div className="search-items">
           <button
-            className="toggle-search"
+            className="btn toggle-search"
             onClick={() => setSearchToggle("ingredient")}
           >
             Search by ingredient
@@ -75,7 +76,9 @@ const SearchBar = props => {
               value={searchItem}
               className="search-input"
             />
-            <button className="recipe-search-btn">Search</button>
+            <button className="btn recipe-search-btn">
+              <FaSearch />
+            </button>
             <div>{props.recipeSearchItem}</div>
           </form>
         </div>
@@ -84,32 +87,39 @@ const SearchBar = props => {
   } else {
     return (
       <div className="search-container">
-        <button
-          className="toggle-search"
-          onClick={() => setSearchToggle("recipe")}
-        >
-          Search by recipe
-        </button>
-        <form className="search-form" onSubmit={addIngredient}>
-          <input
-            type="text"
-            name="ingredient"
-            placeholder="Search by ingredient"
-            value={searchItem}
-            onChange={onSearchChange}
-            className="search-input"
-          />
-
-          <button className="add-button">+</button>
-          <button className="ingredient-search-btn" onClick={ingredientQuery}>
-            search
+        <div className="search-items">
+          <button
+            className="btn toggle-search"
+            onClick={() => setSearchToggle("recipe")}
+          >
+            Search by recipe
           </button>
-        </form>
+          <form className="search-form" onSubmit={addIngredient}>
+            <input
+              type="text"
+              name="ingredient"
+              placeholder="Search by ingredient"
+              value={searchItem}
+              onChange={onSearchChange}
+              className="search-input"
+            />
 
-        {ingArr.map((ing, i) => (
-          <li key={i}>{ing}</li>
-        ))}
-        {searchError}
+            <button className="btn add-button">
+              <FaPlus />
+            </button>
+            <button
+              className="btn ingredient-search-btn"
+              onClick={ingredientQuery}
+            >
+              <FaSearch />
+            </button>
+          </form>
+
+          {ingArr.map((ing, i) => (
+            <li key={i}>{ing}</li>
+          ))}
+          {searchError}
+        </div>
       </div>
     );
   }
