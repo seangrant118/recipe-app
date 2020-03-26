@@ -16,6 +16,11 @@ class Signin extends React.Component {
     const { handleSubmit } = this.props;
     return (
       <div className="credentials-container">
+        <div className="instructions">
+          <h2>Sign in with username.</h2>
+          <p>For existing users.</p>
+        </div>
+
         <form
           className="credentials-form"
           onSubmit={handleSubmit(this.onSubmit)}
