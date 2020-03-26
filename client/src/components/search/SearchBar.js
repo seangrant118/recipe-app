@@ -59,24 +59,26 @@ const SearchBar = props => {
   if (searchToggle === "recipe") {
     return (
       <div className="search-container">
-        <button
-          className="toggle-search"
-          onClick={() => setSearchToggle("ingredient")}
-        >
-          Search by ingredient
-        </button>
-        <form className="search-form" onSubmit={recipeQuery}>
-          <input
-            type="text"
-            name="recipe"
-            placeholder="Search for a recipe"
-            onChange={onSearchChange}
-            value={searchItem}
-            className="search-input"
-          />
-          <button className="recipe-search-btn">Search</button>
-          <div>{props.recipeSearchItem}</div>
-        </form>
+        <div className="search-items">
+          <button
+            className="toggle-search"
+            onClick={() => setSearchToggle("ingredient")}
+          >
+            Search by ingredient
+          </button>
+          <form className="search-form" onSubmit={recipeQuery}>
+            <input
+              type="text"
+              name="recipe"
+              placeholder="Search for a recipe"
+              onChange={onSearchChange}
+              value={searchItem}
+              className="search-input"
+            />
+            <button className="recipe-search-btn">Search</button>
+            <div>{props.recipeSearchItem}</div>
+          </form>
+        </div>
       </div>
     );
   } else {
