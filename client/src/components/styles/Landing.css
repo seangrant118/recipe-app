@@ -11,17 +11,13 @@
 .layout-container {
   position: relative;
 }
-.layout-title {
-  margin: 0;
-  color: rgb(106, 212, 106);
-  text-shadow: 2px 2px 2px green, 6px 6px 6px white;
-}
 
 .layout-subtitle {
   font-style: oblique;
   font-size: 400%;
+  font-weight: 100;
   color: white;
-  margin: 30px 0 30px 0;
+  margin: 30px 10px;
 }
 
 .btn-container {
@@ -34,7 +30,7 @@
   border: none;
   border-radius: 3px;
   background: rgb(106, 212, 106);
-  box-shadow: 1px 2px rgb(101, 155, 101);
+  box-shadow: 0px 2px rgba(101, 155, 101, 0.3);
   color: white;
   font-size: 110%;
   font-weight: 300;
@@ -49,5 +45,43 @@
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 2px 2px 2px green;
+}
+
+@media only screen and (max-width: 1200px) {
+  .layout-subtitle {
+    font-size: 350%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .layout-subtitle {
+    font-size: 250%;
+  }
+  .btn-browse {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .layout-subtitle {
+    font-size: 160%;
+  }
+
+  .btn-browse {
+    font-size: 70%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .layout-container {
+    margin-bottom: 20%;
+  }
+  .layout-subtitle {
+    font-size: 100%;
+    margin-bottom: 15px;
+  }
+
+  .btn-browse {
+    font-size: 70%;
+  }
 }
