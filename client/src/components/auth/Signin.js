@@ -3,6 +3,7 @@ import { reduxForm, Field } from "redux-form";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../../actions/auth";
+import "../styles/auth/credentials.css";
 
 class Signin extends React.Component {
   onSubmit = formProps => {
@@ -14,18 +15,40 @@ class Signin extends React.Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)}>
-        <fieldset>
-          <label>Email</label>
-          <Field name="email" type="text" component="input" />
-        </fieldset>
-        <fieldset>
-          <label>Password</label>
-          <Field name="password" type="password" component="input" />
-        </fieldset>
-        <div>{this.props.errorMessage}</div>
-        <button>Signin</button>
-      </form>
+      <div className="credentials-container">
+        <form
+          className="credentials-form"
+          onSubmit={handleSubmit(this.onSubmit)}
+        >
+          <fieldset>
+            <Field
+              className="input-field"
+              name="email"
+              type="text"
+              component="input"
+              placeholder="username"
+            />
+          </fieldset>
+          <fieldset>
+            <Field
+              className="input-field"
+              name="password"
+              type="password"
+              component="input"
+              placeholder="password"
+            />
+          </fieldset>
+          <div>{this.props.errorMessage}</div>
+          <button className="btn-submit" onSubmit={handleSubmit(this.onSubmit)}>
+            Signin
+          </button>
+          <div className="redirect-container">
+            <a className="btn-redirect" href="/signup">
+              Create an account
+            </a>
+          </div>
+        </form>
+      </div>
     );
   }
 }
