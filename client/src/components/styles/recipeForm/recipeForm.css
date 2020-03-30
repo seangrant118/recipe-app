@@ -40,4 +40,11 @@
 .recipe-form-input {
   height: 40px;
   font-size: 80%;
+  background-color: rgb(208, 236, 208);
+  border: 1px solid rgb(106, 212, 106);
+  border-radius: 5px;
+  transition: border-color 0.5s ease-out;
+}
+.recipe-form-input:focus {
+  border-color: transparent;
 }
