@@ -12,6 +12,7 @@ import RecipeFormSteps from "./RecipeFormSteps";
 import PreviewModal from "./PreviewModal";
 import RecipeFormImage from "./RecipeFormImage";
 import { storage } from "../../fb";
+import "../styles/recipeForm/recipeForm.css";
 
 class CreateRecipe extends React.Component {
   state = {
@@ -119,7 +120,10 @@ class CreateRecipe extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="form-container">
+        <div className="form-recipe-header-container">
+          <h2 className="form-recipe-header">Create a recipe</h2>
+        </div>
         <RecipeFormTitle
           titleChange={this.handleChange}
           title={this.state.title}

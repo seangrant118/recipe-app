@@ -29,7 +29,7 @@ const SearchBar = props => {
     // props.recipeSearch(searchItem);
     const query = searchItem.trim();
     setSearchItem("");
-    props.recipeSearchQuery(query, () => {});
+    props.recipeSearchQuery(query, null);
     props.history.push("/search/recipe/" + query);
   };
 

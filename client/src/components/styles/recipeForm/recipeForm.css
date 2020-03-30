@@ -1,0 +1,19 @@
+.form-container {
+  width: 1140px;
+  background-color: rgb(247, 255, 247);
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 0 50px;
+  overflow-y: none;
+}
+
+.form-recipe-header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-recipe-header {
+  font-size: 250%;
+}

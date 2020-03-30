@@ -18,7 +18,6 @@ class RecipeSearch extends React.Component {
   render() {
     const searchResults = this.props.recipeSearchResults;
     if (this.state.loaded) {
-      console.log(searchResults);
       if (searchResults && searchResults.length > 0) {
         return (
           <div>
