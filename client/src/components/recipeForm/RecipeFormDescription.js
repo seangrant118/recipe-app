@@ -5,6 +5,7 @@ const RecipeFormDescription = props => {
     <fieldset className="recipe-form-field">
       <label className="recipe-form-label">Description</label>
       <textarea
+        className="recipe-form-input"
         name="description"
         type="text"
         placeholder="description"

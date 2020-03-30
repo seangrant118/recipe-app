@@ -5,6 +5,7 @@ const RecipeFormTime = props => {
     <fieldset className="recipe-form-field">
       <label className="recipe-form-label">Cook Time</label>
       <input
+        className="recipe-form-input"
         name="cookTime"
         type="number"
         placeholder="cook time"
@@ -12,6 +13,7 @@ const RecipeFormTime = props => {
         onChange={props.onChange}
       />
       <select
+        className="recipe-form-input select"
         name="cookTimeUnit"
         value={props.state.cookTimeUnit}
         onChange={props.onChange}
@@ -21,6 +23,7 @@ const RecipeFormTime = props => {
       </select>
       <label className="recipe-form-label">Prep Time</label>
       <input
+        className="recipe-form-input"
         name="prepTime"
         type="number"
         placeholder="prep time"
@@ -28,6 +31,7 @@ const RecipeFormTime = props => {
         onChange={props.onChange}
       />
       <select
+        className="recipe-form-input select"
         name="prepTimeUnit"
         value={props.state.prepTimeUnit}
         onChange={props.onChange}

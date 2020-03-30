@@ -5,6 +5,7 @@ const RecipeFormServings = props => {
     <fieldset className="recipe-form-field">
       <label className="recipe-form-label">Servings</label>
       <input
+        className="recipe-form-input"
         name="servings"
         type="number"
         placeholder="0"

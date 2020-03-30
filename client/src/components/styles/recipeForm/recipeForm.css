@@ -3,7 +3,7 @@
   background-color: rgb(247, 255, 247);
   margin: 0 auto;
   margin-top: 50px;
-  padding: 0 50px;
+  padding: 0 50px 20px 0;
   border-radius: 10px;
 }
 
@@ -22,8 +22,14 @@
   width: 100%;
   padding: 20px 0;
   border-bottom: 1px solid rgb(222, 236, 222);
+  text-align: center;
 }
 
 .recipe-form-label {
   padding-right: 10px;
+}
+
+.recipe-form-input {
+  height: 40px;
+  font-size: 80%;
 }

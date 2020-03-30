@@ -5,9 +5,10 @@ const RecipeFormTitle = props => {
     <fieldset className="recipe-form-field">
       <label className="recipe-form-label">Title</label>
       <input
+        className="recipe-form-input"
         name="title"
         type="text"
-        placeholder="title"
+        placeholder="Title"
         value={props.title}
         onChange={props.titleChange}
       />
