@@ -4,7 +4,7 @@ const RecipeFormSteps = props => {
   let { steps } = props;
   return (
     <form>
-      <fieldset onChange={props.stepChange}>
+      <fieldset className="recipe-form-field" onChange={props.stepChange}>
         <button onClick={props.addStep}>Add Step</button>
         {steps &&
           steps.map((step, i) => {

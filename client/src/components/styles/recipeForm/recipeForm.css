@@ -17,3 +17,9 @@
 .form-recipe-header {
   font-size: 250%;
 }
+
+.recipe-form-field {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(222, 236, 222);
+}

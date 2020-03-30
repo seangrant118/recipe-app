@@ -2,7 +2,7 @@ import React from "react";
 
 const RecipeFormServings = props => {
   return (
-    <fieldset>
+    <fieldset className="recipe-form-field">
       <label>Servings</label>
       <input
         name="servings"

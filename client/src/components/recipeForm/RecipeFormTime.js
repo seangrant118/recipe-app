@@ -2,7 +2,7 @@ import React from "react";
 
 const RecipeFormTime = props => {
   return (
-    <fieldset>
+    <fieldset className="recipe-form-field">
       <label>Cook Time</label>
       <input
         name="cookTime"
