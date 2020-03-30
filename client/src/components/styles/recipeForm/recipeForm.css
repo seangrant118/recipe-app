@@ -5,6 +5,7 @@
   margin-top: 50px;
   padding: 0 50px 20px 0;
   border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
 }
 
 .form-recipe-header-container {
@@ -23,6 +24,13 @@
   padding: 20px 0;
   border-bottom: 1px solid rgb(222, 236, 222);
   text-align: center;
+}
+
+.label-container {
+  padding-bottom: 5px;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 75%;
 }
 
 .recipe-form-label {
