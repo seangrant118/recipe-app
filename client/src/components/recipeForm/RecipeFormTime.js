@@ -3,7 +3,7 @@ import React from "react";
 const RecipeFormTime = props => {
   return (
     <fieldset className="recipe-form-field">
-      <label>Cook Time</label>
+      <label className="recipe-form-label">Cook Time</label>
       <input
         name="cookTime"
         type="number"
@@ -19,7 +19,7 @@ const RecipeFormTime = props => {
         <option value="Mins">Mins</option>
         <option value="Hrs">Hrs</option>
       </select>
-      <label>Prep Time</label>
+      <label className="recipe-form-label">Prep Time</label>
       <input
         name="prepTime"
         type="number"

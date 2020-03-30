@@ -14,8 +14,11 @@ const RecipeFormIngredient = props => {
 
             return (
               <div key={i}>
-                <label>{`Ingredient ${i + 1}`}</label>
-                <label htmlFor={quantityID}>Quantity</label>
+                <label className="recipe-form-label">{`Ingredient ${i +
+                  1}`}</label>
+                <label className="recipe-form-label" htmlFor={quantityID}>
+                  Quantity
+                </label>
                 <input
                   type="number"
                   name={quantityID}
@@ -25,7 +28,9 @@ const RecipeFormIngredient = props => {
                   value={ingredient.quantity}
                   onChange={props.ingredientChange}
                 />
-                <label htmlFor={unitID}>Unit</label>
+                <label className="recipe-form-label" htmlFor={unitID}>
+                  Unit
+                </label>
                 <select
                   name={unitID}
                   data-id={i}
@@ -37,7 +42,9 @@ const RecipeFormIngredient = props => {
                   <option value="cups">cups</option>
                   <option value="tbs">tbs</option>
                 </select>
-                <label htmlFor={ingredientID}>Ingredient</label>
+                <label className="recipe-form-label" htmlFor={ingredientID}>
+                  Ingredient
+                </label>
                 <input
                   type="text"
                   name={ingredientID}

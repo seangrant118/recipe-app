@@ -3,7 +3,7 @@ import React from "react";
 const RecipeFormDescription = props => {
   return (
     <fieldset className="recipe-form-field">
-      <label>Description</label>
+      <label className="recipe-form-label">Description</label>
       <textarea
         name="description"
         type="text"

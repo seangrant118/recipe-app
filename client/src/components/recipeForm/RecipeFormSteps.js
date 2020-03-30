@@ -12,7 +12,7 @@ const RecipeFormSteps = props => {
 
             return (
               <div key={i}>
-                <label>{`Step #${i + 1}`}</label>
+                <label className="recipe-form-label">{`Step #${i + 1}`}</label>
                 <input
                   type="text"
                   name={stepID}

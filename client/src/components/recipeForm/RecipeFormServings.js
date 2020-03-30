@@ -3,7 +3,7 @@ import React from "react";
 const RecipeFormServings = props => {
   return (
     <fieldset className="recipe-form-field">
-      <label>Servings</label>
+      <label className="recipe-form-label">Servings</label>
       <input
         name="servings"
         type="number"
