@@ -30,7 +30,7 @@ const RecipeFormImage = props => {
         />
       </div>
       <div className="img-button-container">
-        <button onClick={handleClick} className="upload-img">
+        <button onClick={handleClick} className="form-button">
           Choose File
         </button>
       </div>
