@@ -20,21 +20,21 @@
 
 .recipe-form-field {
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0 20px 0;
   border-bottom: 1px solid rgb(222, 236, 222);
   text-align: center;
 }
 
 .label-container {
-  padding-bottom: 5px;
+  padding: 20px 0 10px 0;
   font-style: italic;
   font-weight: 100;
   font-size: 75%;
 }
 
-.recipe-form-label {
-  padding-right: 10px;
-}
+/* .recipe-form-label {
+  
+} */
 
 .recipe-form-input {
   height: 40px;
@@ -45,7 +45,7 @@
   transition: border-color 0.5s ease-out;
 }
 .recipe-form-input:focus {
-  border-color: transparent;
+  border-color: #f5d7e1;
 }
 
 .form-textarea {
@@ -101,4 +101,15 @@
 .form-button:hover {
   background-color: #f5d7e1;
   box-shadow: 1px 1px 1px 1px #f8e8ee;
+}
+
+.time-input {
+  margin-right: 7px;
+  width: 100px;
+  text-align: center;
+  font-size: 80%;
+}
+
+fieldset .label-container:nth-child(2) {
+  margin-bottom: 10px;
 }
