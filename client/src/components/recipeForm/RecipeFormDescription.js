@@ -3,12 +3,14 @@ import React from "react";
 const RecipeFormDescription = props => {
   return (
     <fieldset className="recipe-form-field">
-      <label className="recipe-form-label">Description</label>
+      <div className="label-container">
+        <label className="recipe-form-label">Description</label>
+      </div>
       <textarea
-        className="recipe-form-input"
+        className="recipe-form-input form-textarea"
         name="description"
         type="text"
-        placeholder="description"
+        placeholder="Description"
         value={props.description}
         onChange={props.descriptionChange}
       />
