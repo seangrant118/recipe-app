@@ -3,9 +3,11 @@ import React from "react";
 const RecipeFormServings = props => {
   return (
     <fieldset className="recipe-form-field">
-      <label className="recipe-form-label">Servings</label>
+      <div className="label-container">
+        <label className="recipe-form-label">Servings</label>
+      </div>
       <input
-        className="recipe-form-input"
+        className="recipe-form-input servings"
         name="servings"
         type="number"
         placeholder="0"

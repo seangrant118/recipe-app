@@ -108,8 +108,17 @@
   width: 100px;
   text-align: center;
   font-size: 80%;
+  padding-left: 12px;
+  padding-top: 3px;
 }
 
 fieldset .label-container:nth-child(2) {
   margin-bottom: 10px;
+}
+
+.servings {
+  width: 100px;
+  text-align: center;
+  font-size: 100%;
+  padding-left: 12px;
 }
