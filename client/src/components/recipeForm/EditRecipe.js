@@ -155,9 +155,15 @@ class CreateRecipe extends React.Component {
             addStep={this.addStep}
             steps={this.state.steps}
           />
-          <button onClick={() => this.setState(() => ({ isOpen: true }))}>
-            Preview
-          </button>
+          <div className="preview-button-container">
+            <button
+              className="preview-button form-button"
+              onClick={() => this.setState(() => ({ isOpen: true }))}
+            >
+              Preview
+            </button>
+          </div>
+
           <PreviewModal
             isOpen={this.state.isOpen}
             handleCloseModal={this.handleCloseModal}

@@ -1,8 +1,7 @@
 .form-container {
   width: 1140px;
   background-color: rgb(247, 255, 247);
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 50px auto;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
 }
@@ -230,4 +229,18 @@ fieldset .label-container:nth-child(2) {
   border-bottom: 1px solid rgb(222, 236, 222);
   width: 60%;
   margin: 0 auto;
+}
+
+.preview-button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0 50px 0;
+}
+
+.preview-button {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 125%;
 }
