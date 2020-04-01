@@ -5,9 +5,9 @@ const RecipeFormIngredient = props => {
   return (
     <form>
       <fieldset className="recipe-form-field" onChange={props.ingredientChange}>
-        <button onClick={props.addIngredient} className="form-button">
-          Add New Ingredient
-        </button>
+        <div className="label-container">
+          <label className="recipe-form-label">Ingredients</label>
+        </div>
         {ingredients &&
           ingredients.map((ingredient, i) => {
             let ingredientID = `ingredient-${i}`;
@@ -16,49 +16,66 @@ const RecipeFormIngredient = props => {
 
             return (
               <div className="ingredient-container" key={i}>
-                <label className="recipe-form-label">{`Ingredient ${i +
-                  1}`}</label>
-                <label className="recipe-form-label" htmlFor={quantityID}>
-                  Quantity
-                </label>
-                <input
-                  type="number"
-                  name={quantityID}
-                  data-id={i}
-                  id={quantityID}
-                  className="quantity"
-                  value={ingredient.quantity}
-                  onChange={props.ingredientChange}
-                />
-                <label className="recipe-form-label" htmlFor={unitID}>
-                  Unit
-                </label>
-                <select
-                  name={unitID}
-                  data-id={i}
-                  id={unitID}
-                  className="unit"
-                  value={props.unit}
-                  onChange={props.ingredientChange}
-                >
-                  <option value="cups">cups</option>
-                  <option value="tbs">tbs</option>
-                </select>
-                <label className="recipe-form-label" htmlFor={ingredientID}>
-                  Ingredient
-                </label>
-                <input
-                  type="text"
-                  name={ingredientID}
-                  data-id={i}
-                  id={ingredientID}
-                  className="ingredient"
-                  value={ingredient.ingredient}
-                  onChange={props.ingredientChange}
-                />
+                <div className="ingredient-number-label-container">
+                  <label className="recipe-form-label">{`#${i + 1}`}</label>
+                </div>
+                <div className="ingredient-item-container">
+                  <div className="label-container">
+                    <label className="recipe-form-label" htmlFor={quantityID}>
+                      Quantity
+                    </label>
+                  </div>
+                  <input
+                    type="number"
+                    name={quantityID}
+                    data-id={i}
+                    id={quantityID}
+                    className="quantity"
+                    placeholder="0"
+                    value={ingredient.quantity}
+                    onChange={props.ingredientChange}
+                  />
+                </div>
+                <div className="ingredient-item-container">
+                  <div className="label-container">
+                    <label className="recipe-form-label" htmlFor={unitID}>
+                      Unit
+                    </label>
+                  </div>
+                  <select
+                    name={unitID}
+                    data-id={i}
+                    id={unitID}
+                    className="unit"
+                    value={props.unit}
+                    onChange={props.ingredientChange}
+                  >
+                    <option value="cups">cups</option>
+                    <option value="tbs">tbs</option>
+                  </select>
+                </div>
+                <div className="ingredient-item-container">
+                  <div className="label-container">
+                    <label className="recipe-form-label" htmlFor={ingredientID}>
+                      Ingredient
+                    </label>
+                  </div>
+                  <input
+                    type="text"
+                    name={ingredientID}
+                    data-id={i}
+                    id={ingredientID}
+                    className="ingredient"
+                    value={ingredient.ingredient}
+                    onChange={props.ingredientChange}
+                  />
+                </div>
               </div>
             );
           })}
+        <button onClick={props.addIngredient} className="form-button">
+          Add New Ingredient
+        </button>
       </fieldset>
     </form>
   );
