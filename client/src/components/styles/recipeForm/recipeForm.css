@@ -3,7 +3,6 @@
   background-color: rgb(247, 255, 247);
   margin: 0 auto;
   margin-top: 50px;
-  padding: 0 50px 20px 0;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
 }
@@ -57,6 +56,7 @@
 
 .form-textarea::placeholder {
   text-align: center;
+  line-height: 96px;
   font-size: 150%;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -74,17 +74,17 @@
   background-color: white;
   width: auto;
   max-width: 600px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  border-radius: 3px;
+  margin: 10px auto;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
 }
 
 .recipe-img {
+  display: inline-table;
   height: 100%;
-}
-
-.recipe-img[alt] {
-  height: 0;
+  max-width: 100%;
+  border-radius: 5px;
 }

@@ -19,10 +19,20 @@ const RecipeFormImage = props => {
         ref={fileInput}
       />
       <div className="recipe-img-container">
-        <img src={props.image} alt="Recipe Image" className="recipe-img" />
+        <img
+          src={
+            props.image
+              ? props.image
+              : "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?cs=srgb&dl=burrito-chicken-delicious-dinner-461198.jpg&fm=jpg"
+          }
+          alt="Recipe"
+          className="recipe-img"
+        />
       </div>
-      <div className="image-button-container">
-        <button onClick={handleClick}>Choose File</button>
+      <div className="img-button-container">
+        <button onClick={handleClick} className="upload-img">
+          Choose File
+        </button>
       </div>
     </fieldset>
   );
