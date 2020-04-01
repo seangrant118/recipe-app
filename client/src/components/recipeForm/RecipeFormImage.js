@@ -18,8 +18,12 @@ const RecipeFormImage = props => {
         type="file"
         ref={fileInput}
       />
-      <button onClick={handleClick}>Choose File</button>
-      <img src={props.image} alt="recipe" />
+      <div className="recipe-img-container">
+        <img src={props.image} alt="Recipe Image" className="recipe-img" />
+      </div>
+      <div className="image-button-container">
+        <button onClick={handleClick}>Choose File</button>
+      </div>
     </fieldset>
   );
 };
