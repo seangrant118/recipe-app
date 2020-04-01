@@ -146,11 +146,12 @@ fieldset .label-container:nth-child(2) {
 
 .quantity {
   height: 40px;
-  font-size: 80%;
+  font-size: 90%;
   width: 75px;
   padding-left: 10px;
   padding-top: 3px;
   margin-right: 10px;
+  text-align: center;
   background-color: white;
   border: 1px solid #f8e8ee;
   border-radius: 5px;
@@ -166,6 +167,8 @@ fieldset .label-container:nth-child(2) {
   height: 40px;
   font-size: 80%;
   margin-right: 10px;
+  text-align: center;
+  width: 100px;
   background-color: white;
   border: 1px solid #f8e8ee;
   border-radius: 5px;

@@ -20,14 +20,14 @@ class CreateRecipe extends React.Component {
     title: "",
     description: "",
     image: "",
-    cookTime: "",
+    cookTime: 0,
     cookTimeUnit: "Mins",
-    prepTime: "",
+    prepTime: 0,
     prepTimeUnit: "Mins",
     servings: 0,
     ingredients: [
       {
-        quantity: "",
+        quantity: 0,
         unit: "cups",
         ingredient: ""
       }
@@ -48,7 +48,7 @@ class CreateRecipe extends React.Component {
     this.setState(prevState => ({
       ingredients: [
         ...prevState.ingredients,
-        { quantity: "", unit: "cups", ingredient: "" }
+        { quantity: 0, unit: "cups", ingredient: "" }
       ]
     }));
   };
