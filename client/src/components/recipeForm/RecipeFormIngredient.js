@@ -5,7 +5,9 @@ const RecipeFormIngredient = props => {
   return (
     <form>
       <fieldset className="recipe-form-field" onChange={props.ingredientChange}>
-        <button onClick={props.addIngredient}>Add New Ingredient</button>
+        <button onClick={props.addIngredient} className="form-button">
+          Add New Ingredient
+        </button>
         {ingredients &&
           ingredients.map((ingredient, i) => {
             let ingredientID = `ingredient-${i}`;
@@ -13,7 +15,7 @@ const RecipeFormIngredient = props => {
             let unitID = `unit-${i}`;
 
             return (
-              <div key={i}>
+              <div className="ingredient-container" key={i}>
                 <label className="recipe-form-label">{`Ingredient ${i +
                   1}`}</label>
                 <label className="recipe-form-label" htmlFor={quantityID}>
