@@ -50,4 +50,10 @@
   box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
   width: 75%;
   margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.preview-title {
+  text-align: center;
+  padding-top: 15px;
 }

@@ -13,7 +13,7 @@ const PreviewModal = props => (
     isOpen={props.isOpen}
     onRequestClose={props.handleCloseModal}
     contentLabel="Recipe Preview"
-    closeTimeoutMS={200}
+    closeTimeoutMS={500}
     className="modal"
     ariaHideApp={false}
   >
@@ -22,7 +22,7 @@ const PreviewModal = props => (
         x
       </div>
       <div className="modal-container">
-        <h1>{props.state.title}</h1>
+        <h1 className="preview-title">{props.state.title}</h1>
         <p>{props.state.description}</p>
         <img style={style} src={props.state.image} alt="recipe" />
         <p>
@@ -52,8 +52,12 @@ const PreviewModal = props => (
             );
           })}
         </ol>
-        <button onClick={props.handleCloseModal}>Close Modal</button>
-        <button onClick={props.submitRecipe}>Submit Recipe!</button>
+        <button className="form-button" onClick={props.handleCloseModal}>
+          Close Modal
+        </button>
+        <button className="form-button" onClick={props.submitRecipe}>
+          Submit Recipe!
+        </button>
       </div>
     </div>
   </Modal>
