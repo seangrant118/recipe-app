@@ -5,15 +5,19 @@ const RecipeFormSteps = props => {
   return (
     <form>
       <fieldset className="recipe-form-field" onChange={props.stepChange}>
-        <button onClick={props.addStep}>Add Step</button>
+        <div className="label-container">
+          <label className="recipe-form-label">Instructions</label>
+        </div>
         {steps &&
           steps.map((step, i) => {
             let stepID = `step-${i}`;
 
             return (
-              <div key={i}>
-                <label className="recipe-form-label">{`Step #${i + 1}`}</label>
-                <input
+              <div className="step-container" key={i}>
+                <div className="step-number-container">
+                  <label className="step-form-label">{`Step #${i + 1}`}</label>
+                </div>
+                <textarea
                   type="text"
                   name={stepID}
                   data-id={i}
@@ -25,6 +29,9 @@ const RecipeFormSteps = props => {
               </div>
             );
           })}
+        <button onClick={props.addStep} className="form-button">
+          Add Step
+        </button>
       </fieldset>
     </form>
   );
