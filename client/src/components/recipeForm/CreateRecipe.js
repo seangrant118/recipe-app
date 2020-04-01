@@ -55,9 +55,7 @@ class CreateRecipe extends React.Component {
   ingredientChange = e => {
     if (["quantity", "unit", "ingredient"].includes(e.target.className)) {
       let ingredients = [...this.state.ingredients];
-      ingredients[e.target.dataset.id][
-        e.target.className
-      ] = e.target.value.toUpperCase();
+      ingredients[e.target.dataset.id][e.target.className] = e.target.value;
       this.setState({ ingredients }, () => console.log(this.state.ingredients));
     } else {
       this.setState({ [e.target.name]: e.target.value.toUpperCase() });
