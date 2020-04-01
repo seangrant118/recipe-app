@@ -1,6 +1,5 @@
 import React from "react";
 import Modal from "react-modal";
-import { MdFullscreenExit as Exit } from "react-icons/md";
 import "../styles/recipeForm/PreviewModal.css";
 
 const style = {
