@@ -110,3 +110,46 @@
 .icon-desc p {
   padding-left: 5px;
 }
+
+.ingredients-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+.ingredients-container h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(222, 236, 222);
+}
+
+.ingredients-list {
+  list-style: none;
+  display: flexbox;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.ing-odd,
+.ing-even {
+  width: 50%;
+  overflow-wrap: break-word;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 75%;
+}
+
+.ing-odd {
+  padding-right: 20px;
+}
+
+.icon-ing {
+  display: flex;
+}
+
+.icon-ing li {
+  padding-left: 10px;
+}
+
+.icon-ing svg {
+  color: #f5d7e1;
+}

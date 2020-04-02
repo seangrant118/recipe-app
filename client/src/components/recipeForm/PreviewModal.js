@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import { IoMdTime } from "react-icons/io";
 import { AiOutlinePieChart } from "react-icons/ai";
+import { FaCheck } from "react-icons/fa";
 import "../styles/recipeForm/PreviewModal.css";
 
 Modal.defaultStyles = {};
@@ -50,27 +51,51 @@ const PreviewModal = props => (
             </div>
           </div>
         </div>
+        <div className="ingredients-container">
+          <h3>Ingredients</h3>
+          <ul className="ingredients-list">
+            {props.state.ingredients.map((ingredient, i) => {
+              if (i % 2) {
+                return (
+                  <div className="ing-even">
+                    <div className="icon-ing">
+                      <FaCheck />
+                      <li key={i}>
+                        {ingredient.quantity} {ingredient.unit}{" "}
+                        {ingredient.ingredient}
+                      </li>
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="ing-odd">
+                    <div className="icon-ing">
+                      <FaCheck />
+                      <li key={i}>
+                        {ingredient.quantity} {ingredient.unit}{" "}
+                        {ingredient.ingredient}
+                      </li>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </ul>
+        </div>
+        <div>
+          <h5>Instructions</h5>
+          <ol>
+            {props.state.steps.map((step, i) => {
+              return (
+                <li key={i}>
+                  Step {i + 1}: {step.step}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
 
-        <h5>Ingredients</h5>
-        <ul>
-          {props.state.ingredients.map((ingredient, i) => {
-            return (
-              <li key={i}>
-                {ingredient.quantity} {ingredient.unit} {ingredient.ingredient}
-              </li>
-            );
-          })}
-        </ul>
-        <h5>Instructions</h5>
-        <ol>
-          {props.state.steps.map((step, i) => {
-            return (
-              <li key={i}>
-                Step {i + 1}: {step.step}
-              </li>
-            );
-          })}
-        </ol>
         <button className="form-button" onClick={props.handleCloseModal}>
           Close Modal
         </button>
