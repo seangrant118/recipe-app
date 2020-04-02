@@ -57,10 +57,10 @@ const PreviewModal = props => (
             {props.state.ingredients.map((ingredient, i) => {
               if (i % 2) {
                 return (
-                  <div className="ing-even">
+                  <div key={i} className="ing-even">
                     <div className="icon-ing">
                       <FaCheck />
-                      <li key={i}>
+                      <li>
                         {ingredient.quantity} {ingredient.unit}{" "}
                         {ingredient.ingredient}
                       </li>
@@ -69,10 +69,10 @@ const PreviewModal = props => (
                 );
               } else {
                 return (
-                  <div className="ing-odd">
+                  <div key={i} className="ing-odd">
                     <div className="icon-ing">
                       <FaCheck />
-                      <li key={i}>
+                      <li>
                         {ingredient.quantity} {ingredient.unit}{" "}
                         {ingredient.ingredient}
                       </li>
@@ -83,14 +83,15 @@ const PreviewModal = props => (
             })}
           </ul>
         </div>
-        <div>
-          <h5>Instructions</h5>
+        <div className="instructions-container">
+          <h3>Instructions</h3>
           <ol>
             {props.state.steps.map((step, i) => {
               return (
-                <li key={i}>
-                  Step {i + 1}: {step.step}
-                </li>
+                <div key={i} className="each-step">
+                  <p className="step-number">{i + 1}</p>
+                  <li className="instruction">{step.step}</li>
+                </div>
               );
             })}
           </ol>
