@@ -1,5 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
+import { IoMdTime } from "react-icons/io";
+import { AiOutlinePieChart } from "react-icons/ai";
 import "../styles/recipeForm/PreviewModal.css";
 
 Modal.defaultStyles = {};
@@ -30,13 +32,22 @@ const PreviewModal = props => (
             />
           </div>
           <div className="info-container">
-            <p>
-              Cook Time: {props.state.cookTime} {props.state.cookTimeUnit}
-            </p>
-            <p>
-              Prep Time: {props.state.prepTime} {props.state.prepTimeUnit}
-            </p>
-            <p>Servings: {props.state.servings}</p>
+            <div className="icon-desc">
+              <IoMdTime className="time-icon" />
+              <p>
+                Cook Time: {props.state.cookTime} {props.state.cookTimeUnit}
+              </p>
+            </div>
+            <div className="icon-desc">
+              <IoMdTime className="time-icon" />
+              <p>
+                Prep Time: {props.state.prepTime} {props.state.prepTimeUnit}
+              </p>
+            </div>
+            <div className="icon-desc">
+              <AiOutlinePieChart className="serving-icon" />
+              <p>Servings: {props.state.servings}</p>
+            </div>
           </div>
         </div>
 

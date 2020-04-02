@@ -85,8 +85,28 @@
 }
 
 .info-container {
+  width: 35%;
+  height: 50%;
+  /* text-align: center; */
   border-radius: 55px;
   border: 2px solid #f5d7e1;
   padding: 20px 20px;
   background-color: white;
+  font-size: 75%;
+}
+
+.time-icon,
+.serving-icon {
+  font-size: 150%;
+  color: #f5d7e1;
+  font-weight: 800;
+}
+
+.icon-desc {
+  display: flex;
+  align-items: center;
+}
+
+.icon-desc p {
+  padding-left: 5px;
 }
