@@ -96,13 +96,17 @@ const PreviewModal = props => (
             })}
           </ol>
         </div>
-
-        <button className="form-button" onClick={props.handleCloseModal}>
-          Close Modal
-        </button>
-        <button className="form-button" onClick={props.submitRecipe}>
-          Submit Recipe!
-        </button>
+        <div className="modal-button-container">
+          <button
+            className="form-button back-button"
+            onClick={props.handleCloseModal}
+          >
+            Go back
+          </button>
+          <button className="form-button" onClick={props.submitRecipe}>
+            Submit Recipe!
+          </button>
+        </div>
       </div>
     </div>
   </Modal>
