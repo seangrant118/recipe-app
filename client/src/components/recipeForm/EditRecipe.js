@@ -124,9 +124,7 @@ class CreateRecipe extends React.Component {
       return (
         <div className="form-container">
           <div className="form-recipe-header-container">
-            <h2 className="form-recipe-header">
-              Edit <em>{this.state.title}</em>
-            </h2>
+            <h2 className="form-recipe-header">Edit '{this.state.title}'</h2>
           </div>
           <RecipeFormTitle
             titleChange={this.handleChange}

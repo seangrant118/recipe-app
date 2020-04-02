@@ -27,13 +27,13 @@
 .label-container {
   padding: 10px 0;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 75%;
 }
 
-/* .recipe-form-label {
-  
-} */
+.recipe-form-label {
+  font-weight: 400;
+}
 
 .recipe-form-input {
   height: 40px;
@@ -57,7 +57,7 @@
   text-align: center;
   line-height: 96px;
   font-size: 150%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 .image-input {
@@ -138,7 +138,7 @@ fieldset .label-container:nth-child(2) {
 .ingredient-number-label-container {
   padding: 20px 10px 0 0;
   font-style: italic;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 90%;
   display: inline-block;
 }
@@ -198,7 +198,7 @@ fieldset .label-container:nth-child(2) {
   font-size: 90%;
   width: 70%;
   height: 75px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   padding-left: 10px;
   padding-top: 3px;
   margin-right: 10px;
