@@ -57,3 +57,13 @@
   text-align: center;
   padding-top: 15px;
 }
+
+.description-container {
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.description {
+  font-size: 80%;
+}

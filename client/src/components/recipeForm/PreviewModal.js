@@ -23,7 +23,9 @@ const PreviewModal = props => (
       </div>
       <div className="modal-container">
         <h1 className="preview-title">{props.state.title}</h1>
-        <p>{props.state.description}</p>
+        <div className="description-container">
+          <p className="description">{props.state.description}</p>
+        </div>
         <img style={style} src={props.state.image} alt="recipe" />
         <p>
           Cook Time: {props.state.cookTime} {props.state.cookTimeUnit}
