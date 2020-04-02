@@ -2,11 +2,6 @@ import React from "react";
 import Modal from "react-modal";
 import "../styles/recipeForm/PreviewModal.css";
 
-const style = {
-  width: "50px",
-  height: "50px"
-};
-
 Modal.defaultStyles = {};
 const PreviewModal = props => (
   <Modal
@@ -26,14 +21,25 @@ const PreviewModal = props => (
         <div className="description-container">
           <p className="description">{props.state.description}</p>
         </div>
-        <img style={style} src={props.state.image} alt="recipe" />
-        <p>
-          Cook Time: {props.state.cookTime} {props.state.cookTimeUnit}
-        </p>
-        <p>
-          Prep Time: {props.state.prepTime} {props.state.prepTimeUnit}
-        </p>
-        <p>Servings: {props.state.servings}</p>
+        <div className="image-info-container">
+          <div className="image-container">
+            <img
+              className="preview-image"
+              src={props.state.image}
+              alt="recipe"
+            />
+          </div>
+          <div className="info-container">
+            <p>
+              Cook Time: {props.state.cookTime} {props.state.cookTimeUnit}
+            </p>
+            <p>
+              Prep Time: {props.state.prepTime} {props.state.prepTimeUnit}
+            </p>
+            <p>Servings: {props.state.servings}</p>
+          </div>
+        </div>
+
         <h5>Ingredients</h5>
         <ul>
           {props.state.ingredients.map((ingredient, i) => {

@@ -67,3 +67,19 @@
 .description {
   font-size: 80%;
 }
+
+.image-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.preview-image {
+  width: 70%;
+}
