@@ -78,7 +78,7 @@
 
 .image-container {
   text-align: center;
-  width: 50%;
+  width: 60%;
 }
 
 .preview-image {
@@ -86,7 +86,7 @@
 }
 
 .info-container {
-  width: 50%;
+  width: 35%;
   height: 50%;
   /* text-align: center; */
   border-radius: 55px;
