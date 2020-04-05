@@ -78,14 +78,15 @@
 
 .image-container {
   text-align: center;
+  width: 50%;
 }
 
 .preview-image {
-  width: 70%;
+  width: 100%;
 }
 
 .info-container {
-  width: 35%;
+  width: 50%;
   height: 50%;
   /* text-align: center; */
   border-radius: 55px;
