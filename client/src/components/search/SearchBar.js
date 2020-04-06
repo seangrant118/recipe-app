@@ -6,7 +6,7 @@ import { FaSearch, FaPlus } from "react-icons/fa";
 
 const ingArr = [];
 
-const SearchBar = props => {
+const SearchBar = (props) => {
   // Set Search Conditions
   const [searchToggle, setSearchToggle] = useState("recipe");
   //Set search item for recipe search
@@ -15,12 +15,12 @@ const SearchBar = props => {
   const [searchError, setSearchError] = useState("");
 
   // change state on change
-  const onSearchChange = e => {
+  const onSearchChange = (e) => {
     setSearchItem(e.target.value);
   };
 
   // search for recipes with the query params
-  const recipeQuery = e => {
+  const recipeQuery = (e) => {
     e.preventDefault();
     //adds search item to redux
     if (searchItem.trim() === "") {
@@ -33,7 +33,7 @@ const SearchBar = props => {
     props.history.push("/search/recipe/" + query);
   };
 
-  const addIngredient = e => {
+  const addIngredient = (e) => {
     e.preventDefault();
     if (searchItem.trim() === "") {
       return;
@@ -46,7 +46,7 @@ const SearchBar = props => {
     setSearchItem("");
   };
 
-  const ingredientQuery = e => {
+  const ingredientQuery = (e) => {
     e.preventDefault();
     if (ingArr.length === 0) {
       return false;
@@ -75,6 +75,7 @@ const SearchBar = props => {
               onChange={onSearchChange}
               value={searchItem}
               className="search-input"
+              autoComplete="off"
             />
             <button className="btn recipe-search-btn">
               <FaSearch />
@@ -102,6 +103,7 @@ const SearchBar = props => {
               value={searchItem}
               onChange={onSearchChange}
               className="search-input"
+              autoComplete="off"
             />
 
             <button className="btn add-button">
