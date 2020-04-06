@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { IoMdTime } from "react-icons/io";
 import { AiOutlinePieChart } from "react-icons/ai";
+import { FaCheck } from "react-icons/fa";
 import * as actions from "../actions/recipe";
 import "./styles/RecipeView.css";
 
@@ -60,15 +61,38 @@ class RecipeView extends React.Component {
               </div>
             </div>
           </div>
-
-          <div>Ingredients:</div>
-          {recipe.ingredients.map((ingredient, i) => {
-            return (
-              <li key={i}>
-                {ingredient.quantity} {ingredient.unit} {ingredient.ingredient}
-              </li>
-            );
-          })}
+          <div className="view-ingredients-container">
+            <h3>Ingredients</h3>
+            <ul className="ingredients-list">
+              {recipe.ingredients.map((ingredient, i) => {
+                if (i % 2) {
+                  return (
+                    <div key={i} className="ing-even">
+                      <div className="icon-ing">
+                        <FaCheck />
+                        <li>
+                          {ingredient.quantity} {ingredient.unit}{" "}
+                          {ingredient.ingredient}
+                        </li>
+                      </div>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={i} className="ing-odd">
+                      <div className="icon-ing">
+                        <FaCheck />
+                        <li>
+                          {ingredient.quantity} {ingredient.unit}{" "}
+                          {ingredient.ingredient}
+                        </li>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
+            </ul>
+          </div>
           <div>Instructions: </div>
           <ol>
             {recipe.steps.map((step, i) => {
