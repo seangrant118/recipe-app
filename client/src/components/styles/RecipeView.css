@@ -59,9 +59,6 @@
   transition: all 0.3s;
   margin-right: 10px;
 }
-.delete-btn:hover {
-  box-shadow: 1px 1px 1px 1px rgb(243, 58, 58);
-}
 
 .edit-btn {
   transition: all 0.3s;

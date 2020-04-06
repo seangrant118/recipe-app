@@ -181,12 +181,13 @@
   margin: 0;
   height: 30px;
   width: 30px;
-  border: 1px solid black;
+  border: 1px solid pink;
   border-radius: 50%;
   text-align: center;
   position: absolute;
   font-size: 80%;
   line-height: 175%;
+  background-color: white;
 }
 
 .instruction {
