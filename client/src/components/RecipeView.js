@@ -1,16 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions/recipe";
+import "./styles/RecipeView.css";
 
 class RecipeView extends React.Component {
   state = {
-    loaded: false
+    loaded: false,
   };
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.getRecipe(id, () => {
       this.setState({
-        loaded: true
+        loaded: true,
       });
     });
   }
@@ -29,7 +30,7 @@ class RecipeView extends React.Component {
     const { recipe } = this.props;
     if (this.state.loaded) {
       return (
-        <div>
+        <div className="recipe-view-container">
           <div>Title: {recipe.title}</div>
           <div>Description: {recipe.description}</div>
           <img src={recipe.image} alt="recipe" />

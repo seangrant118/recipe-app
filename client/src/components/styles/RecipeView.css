@@ -1,0 +1,7 @@
+.recipe-view-container {
+  width: 1140px;
+  background-color: rgb(247, 255, 247);
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
+}
