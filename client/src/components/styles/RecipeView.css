@@ -40,3 +40,10 @@
   line-height: 25px;
   margin-left: 40px;
 }
+
+.owner {
+  font-size: 85%;
+  font-style: italic;
+  text-align: center;
+  padding-top: 25px;
+}

@@ -106,9 +106,9 @@ class RecipeView extends React.Component {
               })}
             </ol>
           </div>
-          <div className="owner">Created By: {recipe.user.email}</div>
+          <div className="owner">Submitted By: {recipe.user.email}</div>
           {recipe.user._id === this.props.user && (
-            <div>
+            <div className="view-button-container">
               <button onClick={this.handleDelete}>Delete</button>
               <button onClick={this.editRecipe}>edit</button>
             </div>
