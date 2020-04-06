@@ -93,13 +93,20 @@ class RecipeView extends React.Component {
               })}
             </ul>
           </div>
-          <div>Instructions: </div>
-          <ol>
-            {recipe.steps.map((step, i) => {
-              return <li key={i}>{step.step}</li>;
-            })}
-          </ol>
-          <div>Created By: {recipe.user.email}</div>
+          <div className="instructions-container">
+            <h3>Instructions</h3>
+            <ol>
+              {recipe.steps.map((step, i) => {
+                return (
+                  <div className="each-step">
+                    <p className="step-number">{i + 1}</p>
+                    <li className="view-instruction">{step.step}</li>
+                  </div>
+                );
+              })}
+            </ol>
+          </div>
+          <div className="owner">Created By: {recipe.user.email}</div>
           {recipe.user._id === this.props.user && (
             <div>
               <button onClick={this.handleDelete}>Delete</button>
