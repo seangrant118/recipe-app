@@ -5,3 +5,8 @@
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
 }
+
+.recipe-title {
+  text-align: center;
+  padding-top: 15px;
+}

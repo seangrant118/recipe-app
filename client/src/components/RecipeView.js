@@ -31,7 +31,7 @@ class RecipeView extends React.Component {
     if (this.state.loaded) {
       return (
         <div className="recipe-view-container">
-          <div>Title: {recipe.title}</div>
+          <h1 className="recipe-title">{recipe.title}</h1>
           <div>Description: {recipe.description}</div>
           <img src={recipe.image} alt="recipe" />
           <div>
