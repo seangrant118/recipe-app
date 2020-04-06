@@ -47,3 +47,22 @@
   text-align: center;
   padding-top: 25px;
 }
+
+.view-button-container {
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.delete-btn {
+  transition: all 0.3s;
+  margin-right: 10px;
+}
+.delete-btn:hover {
+  box-shadow: 1px 1px 1px 1px rgb(243, 58, 58);
+}
+
+.edit-btn {
+  transition: all 0.3s;
+}
