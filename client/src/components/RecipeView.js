@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { IoMdTime } from "react-icons/io";
+import { AiOutlinePieChart } from "react-icons/ai";
 import * as actions from "../actions/recipe";
 import "./styles/RecipeView.css";
 
@@ -35,14 +37,30 @@ class RecipeView extends React.Component {
           <div className="description-container">
             <div className="description">{recipe.description}</div>
           </div>
-          <img src={recipe.image} alt="recipe" />
-          <div>
-            Cook Time: {recipe.cookTime} {recipe.cookTimeUnit}
+          <div className="image-info-container">
+            <div className="image-container">
+              <img src={recipe.image} alt="recipe" />
+            </div>
+            <div className="view-info-container">
+              <div className="icon-desc">
+                <IoMdTime className="time-icon" />
+                <p>
+                  Cook Time: {recipe.cookTime} {recipe.cookTimeUnit}
+                </p>
+              </div>
+              <div className="icon-desc">
+                <IoMdTime className="time-icon" />
+                <p>
+                  Prep Time: {recipe.prepTime} {recipe.prepTimeUnit}
+                </p>
+              </div>
+              <div className="icon-desc">
+                <AiOutlinePieChart className="serving-icon" />
+                <p>Servings: {recipe.servings}</p>
+              </div>
+            </div>
           </div>
-          <div>
-            Prep Time: {recipe.prepTime} {recipe.prepTimeUnit}
-          </div>
-          <div>Servings: {recipe.servings}</div>
+
           <div>Ingredients:</div>
           {recipe.ingredients.map((ingredient, i) => {
             return (
