@@ -22,7 +22,7 @@ class RecipeView extends React.Component {
     this.setState({ loading: false });
     const id = this.props.match.params.id;
     this.props.deleteRecipe(id, () => {
-      this.props.history.push("/");
+      this.props.history.push("/home");
     });
   };
   editRecipe = () => {
