@@ -16,7 +16,8 @@ const SearchBar = (props) => {
 
   // change state on change
   const onSearchChange = (e) => {
-    setSearchItem(e.target.value);
+    let item = e.target.value.toLowerCase();
+    setSearchItem(item);
   };
 
   // search for recipes with the query params
@@ -39,7 +40,7 @@ const SearchBar = (props) => {
       return;
     }
     if (ingArr.length < 4) {
-      ingArr.push(searchItem.trim());
+      ingArr.push(searchItem.toLowerCase().trim());
     } else {
       setSearchError("You can include up to four ingredients");
     }

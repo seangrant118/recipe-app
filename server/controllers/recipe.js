@@ -68,9 +68,11 @@ exports.recipeSearch = function (req, res, next) {
 };
 
 exports.ingredientSearch = function (req, res, next) {
-  const items = req.params.id.toUpperCase();
+  const items = req.params.id;
   const itemsArr = items.split(",");
+  console.log(itemsArr);
   const [a, b = a, c = a, d = a] = itemsArr;
+  console.log(a, b, c, d);
   Recipe.find(
     { "ingredients.ingredient": { $all: [a, b, c, d] } },
     "title description image",
@@ -78,6 +80,7 @@ exports.ingredientSearch = function (req, res, next) {
       if (err) {
         return next(err);
       }
+      console.log(recipes);
       res.json(recipes);
     }
   );

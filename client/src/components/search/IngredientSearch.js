@@ -5,18 +5,19 @@ import RecipeCard from "../RecipeCard";
 
 class IngredientSearch extends React.Component {
   state = {
-    loaded: false
+    loaded: false,
   };
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.ingredientSearchQuery(id, () => {
       this.setState({
-        loaded: true
+        loaded: true,
       });
     });
   }
   render() {
     const results = this.props.ingredientSearchResults;
+    console.log(results);
     const items = this.props.match.params.id.split(",");
     if (this.state.loaded) {
       return (
