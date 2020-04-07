@@ -4,13 +4,14 @@ import { withRouter } from "react-router";
 import * as actions from "../../actions/search";
 import { FaSearch, FaPlus } from "react-icons/fa";
 
-const ingArr = [];
-
 const SearchBar = (props) => {
   // Set Search Conditions
   const [searchToggle, setSearchToggle] = useState("recipe");
+
   //Set search item for recipe search
   const [searchItem, setSearchItem] = useState("");
+
+  const [ingSearchItems, setIngSearchItems] = useState([]);
 
   const [searchError, setSearchError] = useState("");
 
@@ -39,8 +40,8 @@ const SearchBar = (props) => {
     if (searchItem.trim() === "") {
       return;
     }
-    if (ingArr.length < 4) {
-      ingArr.push(searchItem.toLowerCase().trim());
+    if (ingSearchItems.length < 4) {
+      setIngSearchItems([...ingSearchItems, searchItem.toLowerCase().trim()]);
     } else {
       setSearchError("You can include up to four ingredients");
     }
@@ -49,13 +50,22 @@ const SearchBar = (props) => {
 
   const ingredientQuery = (e) => {
     e.preventDefault();
-    if (ingArr.length === 0) {
+    if (ingSearchItems.length === 0) {
       return false;
     }
-    const query = ingArr;
-    // props.ingredientSearch(ingArr);
-    props.ingredientSearchQuery(ingArr);
+    const query = ingSearchItems;
+    props.ingredientSearchQuery(ingSearchItems);
     props.history.push("/search/ingredient/" + query);
+    setIngSearchItems([]);
+  };
+
+  const removeItem = (e) => {
+    console.log(e.target.getAttribute("name"));
+    const name = e.target.getAttribute("name");
+
+    setIngSearchItems(ingSearchItems.filter((item) => item !== name));
+
+    // setIngSearchItems(ingSearchItems.filter((item) => item.dataset.id !== i));
   };
 
   if (searchToggle === "recipe") {
@@ -106,7 +116,18 @@ const SearchBar = (props) => {
               className="search-input"
               autoComplete="off"
             />
-
+            <span className="sb-ing-item-container">
+              {ingSearchItems.map((ing, i) => (
+                <span
+                  onClick={removeItem}
+                  className="sb-ing-item"
+                  name={ing}
+                  key={i}
+                >
+                  {ing}
+                </span>
+              ))}
+            </span>
             <button className="btn add-button">
               <FaPlus />
             </button>
@@ -118,9 +139,6 @@ const SearchBar = (props) => {
             </button>
           </form>
 
-          {ingArr.map((ing, i) => (
-            <li key={i}>{ing}</li>
-          ))}
           {searchError}
         </div>
       </div>
