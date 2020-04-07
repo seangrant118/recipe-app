@@ -13,9 +13,6 @@ class Header extends React.Component {
           <Link className="nav-link" to="/signout">
             Sign Out
           </Link>
-          <Link className="nav-link" to="/feature">
-            Feature
-          </Link>
           <Link className="nav-link" to="/createrecipe">
             Create Recipe
           </Link>
@@ -49,7 +46,7 @@ class Header extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
   };
 }
 

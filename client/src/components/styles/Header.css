@@ -137,6 +137,7 @@ input::placeholder {
 
 .sb-ing-item:hover {
   background-color: rgb(90, 202, 90);
+  cursor: pointer;
 }
 
 .search-error {
@@ -153,6 +154,12 @@ input::placeholder {
   border-radius: 5px;
   opacity: 1;
   animation: fade 0.5s linear;
+  transition: background-color 0.5s;
+}
+
+.search-error:hover {
+  background-color: rgba(255, 0, 0, 0.75);
+  cursor: pointer;
 }
 
 .search-error-none {
