@@ -1,14 +1,17 @@
 import React from "react";
 
-const RecipeCard = props => {
+const RecipeCard = (props) => {
   return (
-    <div>
+    <div className="recipe-card">
       <h3>{props.title}</h3>
-      <img src={props.image} alt="recipe" />
-      <p>
+      <div className="card-img-container">
+        <a href={props.route}>
+          <img className="card-img" src={props.image} alt="recipe" />
+        </a>
+      </div>
+      <p className="card-desc">
         <em>{props.description}</em>
       </p>
-      <a href={props.route}>View Recipe</a>
       <br />
     </div>
   );

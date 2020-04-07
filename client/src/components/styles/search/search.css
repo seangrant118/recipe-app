@@ -6,3 +6,46 @@
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(234, 243, 234, 0.5);
 }
+
+.displaying {
+  font-style: italic;
+}
+
+.search-items-display-container {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recipe-card {
+  width: 32%;
+  height: 400px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.recipe-card h3 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-img-container {
+  height: 50%;
+  text-align: center;
+}
+
+.card-img {
+  height: 100%;
+}
+
+.card-desc {
+  width: 100%;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

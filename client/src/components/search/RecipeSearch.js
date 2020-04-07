@@ -24,21 +24,23 @@ class RecipeSearch extends React.Component {
         return (
           <div className="search-items-container">
             <div className="displaying">
-              Displaying results for {this.props.match.params.id} recipes
+              Displaying results for {this.props.match.params.id} recipes...
             </div>
-            {searchResults.map((result, i) => {
-              const id = result._id;
-              const route = "/recipes/" + id;
-              return (
-                <RecipeCard
-                  route={route}
-                  description={result.description}
-                  title={result.title}
-                  image={result.image}
-                  key={i}
-                />
-              );
-            })}
+            <div className="search-items-display-container">
+              {searchResults.map((result, i) => {
+                const id = result._id;
+                const route = "/recipes/" + id;
+                return (
+                  <RecipeCard
+                    route={route}
+                    description={result.description}
+                    title={result.title}
+                    image={result.image}
+                    key={i}
+                  />
+                );
+              })}
+            </div>
           </div>
         );
       } else {
