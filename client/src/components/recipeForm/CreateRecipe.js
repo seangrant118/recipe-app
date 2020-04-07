@@ -29,30 +29,30 @@ class CreateRecipe extends React.Component {
       {
         quantity: 0,
         unit: "cups",
-        ingredient: ""
-      }
+        ingredient: "",
+      },
     ],
     steps: [
       {
-        step: ""
-      }
+        step: "",
+      },
     ],
     userID: this.props.user,
-    isOpen: false
+    isOpen: false,
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  addIngredient = e => {
+  addIngredient = (e) => {
     e.preventDefault();
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ingredients: [
         ...prevState.ingredients,
-        { quantity: 0, unit: "cups", ingredient: "" }
-      ]
+        { quantity: 0, unit: "cups", ingredient: "" },
+      ],
     }));
   };
-  ingredientChange = e => {
+  ingredientChange = (e) => {
     if (["quantity", "unit", "ingredient"].includes(e.target.className)) {
       let ingredients = [...this.state.ingredients];
       ingredients[e.target.dataset.id][e.target.className] = e.target.value;
@@ -62,13 +62,13 @@ class CreateRecipe extends React.Component {
       console.log(e.target);
     }
   };
-  addStep = e => {
+  addStep = (e) => {
     e.preventDefault();
-    this.setState(prevState => ({
-      steps: [...prevState.steps, { step: "" }]
+    this.setState((prevState) => ({
+      steps: [...prevState.steps, { step: "" }],
     }));
   };
-  stepChange = e => {
+  stepChange = (e) => {
     if (["step"].includes(e.target.className)) {
       let steps = [...this.state.steps];
       steps[e.target.dataset.id][e.target.className] = e.target.value;
@@ -86,20 +86,21 @@ class CreateRecipe extends React.Component {
       this.props.history.push("/recipes/" + this.state._id);
     });
   };
-  handleImageChange = e => {
+  handleImageChange = (e) => {
     if (e.target.files[0]) {
       this.setState({
-        image: URL.createObjectURL(e.target.files[0])
+        image: URL.createObjectURL(e.target.files[0]),
       });
-      let currentImageName = "firebase-image-" + Date.now();
+      let date = Date.now();
+      let currentImageName = `image-${date}`;
       let uploadImage = storage
         .ref(`images/${currentImageName}`)
         .put(e.target.files[0]);
 
       uploadImage.on(
         "state_changed",
-        snapshot => {},
-        error => {
+        (snapshot) => {},
+        (error) => {
           console.log(error);
         },
         () => {
@@ -107,9 +108,9 @@ class CreateRecipe extends React.Component {
             .ref("images")
             .child(currentImageName)
             .getDownloadURL()
-            .then(url => {
+            .then((url) => {
               this.setState({
-                image: url
+                image: url,
               });
             });
         }

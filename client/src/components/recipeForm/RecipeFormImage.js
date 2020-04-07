@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const RecipeFormImage = props => {
+const RecipeFormImage = (props) => {
   const fileInput = useRef(null);
 
   function handleClick() {

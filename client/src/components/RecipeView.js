@@ -98,7 +98,7 @@ class RecipeView extends React.Component {
             <ol>
               {recipe.steps.map((step, i) => {
                 return (
-                  <div className="each-step">
+                  <div key={i} className="each-step">
                     <p className="step-number">{i + 1}</p>
                     <li className="view-instruction">{step.step}</li>
                   </div>

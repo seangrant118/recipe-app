@@ -1,6 +1,6 @@
 const Recipe = require("../models/recipe");
 
-exports.createrecipe = function(req, res, next) {
+exports.createrecipe = function (req, res, next) {
   const {
     _id,
     title,
@@ -13,7 +13,7 @@ exports.createrecipe = function(req, res, next) {
     servings,
     ingredients,
     steps,
-    userID
+    userID,
   } = req.body;
 
   const recipe = new Recipe({
@@ -28,10 +28,10 @@ exports.createrecipe = function(req, res, next) {
     servings,
     ingredients,
     steps,
-    user: userID
+    user: userID,
   });
 
-  recipe.save(function(err) {
+  recipe.save(function (err) {
     if (err) {
       return next(err);
     }
@@ -39,27 +39,26 @@ exports.createrecipe = function(req, res, next) {
   });
 };
 
-exports.getRecipe = function(req, res, next) {
+exports.getRecipe = function (req, res, next) {
   const id = req.params.id;
 
   Recipe.findById(id)
     .populate("user", "_id email")
-    .exec(function(err, recipe) {
+    .exec(function (err, recipe) {
       if (err) {
         return next(err);
       }
-      console.log(recipe.user);
       res.json(recipe);
     });
 };
 
-exports.recipeSearch = function(req, res, next) {
+exports.recipeSearch = function (req, res, next) {
   const title = req.params.id;
 
   Recipe.find(
     { title: { $regex: title, $options: "i" } },
     "title description image",
-    function(err, recipes) {
+    function (err, recipes) {
       if (err) {
         return next(err);
       }
@@ -68,14 +67,14 @@ exports.recipeSearch = function(req, res, next) {
   );
 };
 
-exports.ingredientSearch = function(req, res, next) {
+exports.ingredientSearch = function (req, res, next) {
   const items = req.params.id.toUpperCase();
   const itemsArr = items.split(",");
   const [a, b = a, c = a, d = a] = itemsArr;
   Recipe.find(
     { "ingredients.ingredient": { $all: [a, b, c, d] } },
     "title description image",
-    function(err, recipes) {
+    function (err, recipes) {
       if (err) {
         return next(err);
       }
@@ -84,9 +83,9 @@ exports.ingredientSearch = function(req, res, next) {
   );
 };
 
-exports.deleteRecipe = function(req, res, next) {
+exports.deleteRecipe = function (req, res, next) {
   const _id = req.params.id;
-  Recipe.findByIdAndDelete(_id, function(err, result) {
+  Recipe.findByIdAndDelete(_id, function (err, result) {
     if (err) {
       return next(err);
     }
@@ -95,7 +94,7 @@ exports.deleteRecipe = function(req, res, next) {
   });
 };
 
-exports.editRecipe = function(req, res, next) {
+exports.editRecipe = function (req, res, next) {
   console.log(req.body);
   const {
     _id,
@@ -109,7 +108,7 @@ exports.editRecipe = function(req, res, next) {
     servings,
     ingredients,
     steps,
-    userID
+    userID,
   } = req.body;
   Recipe.findByIdAndUpdate(
     _id,
@@ -124,9 +123,9 @@ exports.editRecipe = function(req, res, next) {
       servings,
       ingredients,
       steps,
-      userID
+      userID,
     },
-    function(err, edited) {
+    function (err, edited) {
       if (err) {
         return next(err);
       }
