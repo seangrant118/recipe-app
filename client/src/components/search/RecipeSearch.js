@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/search";
 import RecipeCard from "../RecipeCard";
+import "../styles/search/search.css";
 
 class RecipeSearch extends React.Component {
   state = {
@@ -21,8 +22,8 @@ class RecipeSearch extends React.Component {
     if (this.state.loaded) {
       if (searchResults && searchResults.length > 0) {
         return (
-          <div>
-            <div>
+          <div className="search-items-container">
+            <div className="displaying">
               Displaying results for {this.props.match.params.id} recipes
             </div>
             {searchResults.map((result, i) => {
