@@ -9,9 +9,9 @@ const RecipeCard = (props) => {
           <img className="card-img" src={props.image} alt="recipe" />
         </a>
       </div>
-      <p className="card-desc">
-        <em>{props.description}</em>
-      </p>
+      <div className="card-desc-container">
+        <p className="card-desc">{props.description}</p>
+      </div>
       <br />
     </div>
   );
