@@ -17,30 +17,31 @@ class IngredientSearch extends React.Component {
   }
   render() {
     const results = this.props.ingredientSearchResults;
-    console.log(results);
     const items = this.props.match.params.id.split(",");
     if (this.state.loaded) {
       return (
-        <div>
-          <div>
+        <div className="search-items-container">
+          <div className="displaying">
             showing results for recipes that include{" "}
             {items.map((item, i) => (
               <span key={i}>'{item}' </span>
             ))}
           </div>
-          {results.map((result, i) => {
-            const id = result._id;
-            const route = "/recipes/" + id;
-            return (
-              <RecipeCard
-                description={result.description}
-                route={route}
-                title={result.title}
-                image={result.image}
-                key={i}
-              />
-            );
-          })}
+          <div className="search-items-display-container">
+            {results.map((result, i) => {
+              const id = result._id;
+              const route = "/recipes/" + id;
+              return (
+                <RecipeCard
+                  description={result.description}
+                  route={route}
+                  title={result.title}
+                  image={result.image}
+                  key={i}
+                />
+              );
+            })}
+          </div>
         </div>
       );
     } else {
