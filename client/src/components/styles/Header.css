@@ -26,6 +26,7 @@
   justify-content: space-between;
   height: 98%;
   width: 99.7%;
+  position: relative;
 }
 
 .nav-link {
@@ -136,4 +137,24 @@ input::placeholder {
 
 .sb-ing-item:hover {
   background-color: rgb(90, 202, 90);
+}
+
+.search-error {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: white;
+  text-shadow: 1px red;
+  border-radius: 5px;
+  opacity: 1;
+  animation: fade 0.5s linear;
+}
+
+.search-error-none {
+  display: none;
 }

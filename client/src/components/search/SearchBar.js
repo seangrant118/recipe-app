@@ -15,6 +15,8 @@ const SearchBar = (props) => {
 
   const [searchError, setSearchError] = useState("");
 
+  const [errorClass, setErrorClass] = useState("search-error-none");
+
   // change state on change
   const onSearchChange = (e) => {
     let item = e.target.value.toLowerCase();
@@ -44,6 +46,7 @@ const SearchBar = (props) => {
       setIngSearchItems([...ingSearchItems, searchItem.toLowerCase().trim()]);
     } else {
       setSearchError("You can include up to four ingredients");
+      setErrorClass("search-error");
     }
     setSearchItem("");
   };
@@ -66,6 +69,11 @@ const SearchBar = (props) => {
     setIngSearchItems(ingSearchItems.filter((item) => item !== name));
 
     // setIngSearchItems(ingSearchItems.filter((item) => item.dataset.id !== i));
+  };
+
+  const removeSearchError = () => {
+    setSearchError("");
+    setErrorClass("search-error-none");
   };
 
   if (searchToggle === "recipe") {
@@ -138,8 +146,9 @@ const SearchBar = (props) => {
               <FaSearch />
             </button>
           </form>
-
-          {searchError}
+          <div className={errorClass} onClick={removeSearchError}>
+            {searchError}
+          </div>
         </div>
       </div>
     );
