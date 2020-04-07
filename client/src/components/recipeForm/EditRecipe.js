@@ -28,45 +28,46 @@ class CreateRecipe extends React.Component {
     steps: this.props.recipe.steps,
     userID: this.props.recipe.user._id,
     isOpen: false,
-    loaded: false
+    loaded: false,
   };
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.getRecipe(id, () => {
       this.setState({
-        loaded: true
+        loaded: true,
       });
     });
   }
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  addIngredient = e => {
+  addIngredient = (e) => {
     e.preventDefault();
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ingredients: [
         ...prevState.ingredients,
-        { quantity: "", unit: "cups", ingredient: "" }
-      ]
+        { quantity: "", unit: "cups", ingredient: "" },
+      ],
     }));
   };
-  ingredientChange = e => {
+  ingredientChange = (e) => {
     if (["quantity", "unit", "ingredient"].includes(e.target.className)) {
       let ingredients = [...this.state.ingredients];
-      ingredients[e.target.dataset.id][e.target.className] = e.target.value;
-      this.setState({ ingredients }, () => console.log(this.state.ingredients));
+      ingredients[e.target.dataset.id][
+        e.target.className
+      ] = e.target.value.toLowerCase();
+      this.setState({ ingredients });
     } else {
-      this.setState({ [e.target.name]: e.target.value });
-      console.log(e.target);
+      this.setState({ [e.target.name]: e.target.value.toLowerCase() });
     }
   };
-  addStep = e => {
+  addStep = (e) => {
     e.preventDefault();
-    this.setState(prevState => ({
-      steps: [...prevState.steps, { step: "" }]
+    this.setState((prevState) => ({
+      steps: [...prevState.steps, { step: "" }],
     }));
   };
-  stepChange = e => {
+  stepChange = (e) => {
     if (["step"].includes(e.target.className)) {
       let steps = [...this.state.steps];
       steps[e.target.dataset.id][e.target.className] = e.target.value;
@@ -87,10 +88,10 @@ class CreateRecipe extends React.Component {
       });
     });
   };
-  handleImageChange = e => {
+  handleImageChange = (e) => {
     if (e.target.files[0]) {
       this.setState({
-        image: URL.createObjectURL(e.target.files[0])
+        image: URL.createObjectURL(e.target.files[0]),
       });
       let currentImageName = "firebase-image-" + Date.now();
       let uploadImage = storage
@@ -99,8 +100,8 @@ class CreateRecipe extends React.Component {
 
       uploadImage.on(
         "state_changed",
-        snapshot => {},
-        error => {
+        (snapshot) => {},
+        (error) => {
           console.log(error);
         },
         () => {
@@ -108,9 +109,9 @@ class CreateRecipe extends React.Component {
             .ref("images")
             .child(currentImageName)
             .getDownloadURL()
-            .then(url => {
+            .then((url) => {
               this.setState({
-                image: url
+                image: url,
               });
             });
         }
