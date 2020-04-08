@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import BurgerButton from "./BurgerButton";
 import SearchBar from "./search/SearchBar";
 import "./styles/Header.css";
 
@@ -9,13 +10,14 @@ class Header extends React.Component {
   renderLinks() {
     if (this.props.authenticated) {
       return (
-        <div>
+        <div className="menu-items">
           <Link className="nav-link" to="/signout">
             Sign Out
           </Link>
           <Link className="nav-link" to="/createrecipe">
             Create Recipe
           </Link>
+          <BurgerButton></BurgerButton>
         </div>
       );
     } else {

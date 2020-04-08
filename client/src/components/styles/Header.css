@@ -166,8 +166,62 @@ input::placeholder {
   display: none;
 }
 
+.burger-container {
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
   .nav-link {
     font-size: 0.85em;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-link {
+    display: none;
+  }
+  .search-container {
+    width: 85%;
+  }
+
+  .menu-items {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .burger-container {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .line {
+    height: 3px;
+    width: 20px;
+    background-color: white;
+  }
+
+  .line-top {
+    transform-origin: top right;
+    margin-bottom: 5px;
+  }
+  .line-middle {
+    opacity: 1;
+  }
+  .line-bottom {
+    transform-origin: top right;
+    margin-top: 5px;
   }
 }
