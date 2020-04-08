@@ -63,3 +63,7 @@
 .edit-btn {
   transition: all 0.3s;
 }
+
+.image-container img {
+  width: 100%;
+}

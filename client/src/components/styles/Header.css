@@ -244,7 +244,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     background-color: white;
-    opacity: 0.95;
+    opacity: 1;
     color: rgb(106, 212, 106);
     transition: height 0.3 ease;
     z-index: 2;
