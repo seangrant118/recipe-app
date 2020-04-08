@@ -17,18 +17,39 @@ class Header extends React.Component {
           <Link className="nav-link" to="/createrecipe">
             Create Recipe
           </Link>
-          <BurgerButton></BurgerButton>
+          <BurgerButton>
+            <Link className="burger-item" to="/home">
+              Home
+            </Link>
+            <Link className="burger-item" to="/signout">
+              Sign Out
+            </Link>
+            <Link className="burger-item" to="/createrecipe">
+              Create Recipe
+            </Link>
+          </BurgerButton>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="menu-items">
           <Link className="nav-link" to="/signup">
             Signup
           </Link>
           <Link className="nav-link" to="/signin">
             Signin
           </Link>
+          <BurgerButton>
+            <Link className="burger-item" to="/home">
+              Home
+            </Link>
+            <Link className="burger-item" to="/signup">
+              Signup
+            </Link>
+            <Link className="burger-item" to="/signin">
+              Signin
+            </Link>
+          </BurgerButton>
         </div>
       );
     }

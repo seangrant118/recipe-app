@@ -25,27 +25,19 @@ class BurgerButton extends React.Component {
               <div className="exit exit-bottom" />
             </div>
             <div className="menu-list">
-              <Link
-                className="burger-item"
-                to="/home"
-                onClick={() => this.handleClick()}
-              >
-                Home
-              </Link>
-              <Link
-                className="burger-item"
-                to="/signout"
-                onClick={() => this.handleClick()}
-              >
-                Sign Out
-              </Link>
-              <Link
-                className="burger-item"
-                to="/createrecipe"
-                onClick={() => this.handleClick()}
-              >
-                Create Recipe
-              </Link>
+              {this.props.children.map((Child, i) => {
+                console.log(Child.props);
+                return (
+                  <Link
+                    className={Child.props.className}
+                    to={Child.props.to}
+                    key={i}
+                    onClick={() => this.handleClick()}
+                  >
+                    {Child.props.children}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
