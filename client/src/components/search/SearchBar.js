@@ -136,15 +136,17 @@ const SearchBar = (props) => {
                 </span>
               ))}
             </span>
-            <button className="btn add-button">
-              <FaPlus />
-            </button>
-            <button
-              className="btn ingredient-search-btn"
-              onClick={ingredientQuery}
-            >
-              <FaSearch />
-            </button>
+            <div className="ingredient-search-btn-container">
+              <button className="btn add-button">
+                <FaPlus />
+              </button>
+              <button
+                className="btn ingredient-search-btn"
+                onClick={ingredientQuery}
+              >
+                <FaSearch />
+              </button>
+            </div>
           </form>
           <div className={errorClass} onClick={removeSearchError}>
             {searchError}
