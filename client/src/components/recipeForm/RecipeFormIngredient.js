@@ -1,10 +1,14 @@
 import React from "react";
 
-const RecipeFormIngredient = props => {
+const RecipeFormIngredient = (props) => {
   let { ingredients } = props;
   return (
     <form>
-      <fieldset className="recipe-form-field" onChange={props.ingredientChange}>
+      <fieldset
+        className="recipe-form-field"
+        id="ingredient-input-field"
+        onChange={props.ingredientChange}
+      >
         <div className="label-container">
           <label className="recipe-form-label">Ingredients</label>
         </div>

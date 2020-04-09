@@ -323,3 +323,11 @@ fieldset .label-container:nth-child(2) {
     font-size: 175%;
   }
 }
+
+#ingredient-input-field .ingredient-container:nth-child(2) .label-container {
+  display: block;
+}
+
+.ingredient-item-container .label-container {
+  display: none;
+}
