@@ -208,3 +208,31 @@
 .back-button {
   margin-right: 20px;
 }
+
+@media only screen and (max-width: 1200px) {
+  .modal-container {
+    width: 90%;
+  }
+
+  .preview-image {
+    max-height: 300px;
+  }
+
+  .image-container img {
+    max-height: 300px;
+    width: auto;
+  }
+
+  .each-step {
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 480px) {
+}
