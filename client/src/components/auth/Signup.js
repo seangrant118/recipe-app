@@ -6,9 +6,9 @@ import * as actions from "../../actions/auth";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 
 class Signup extends React.Component {
-  onSubmit = formProps => {
+  onSubmit = (formProps) => {
     this.props.signup(formProps, () => {
-      this.props.history.push("/feature");
+      this.props.history.push("/home");
     });
   };
 

@@ -7,9 +7,9 @@ import "../styles/auth/credentials.css";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 
 class Signin extends React.Component {
-  onSubmit = formProps => {
+  onSubmit = (formProps) => {
     this.props.signin(formProps, () => {
-      this.props.history.push("/feature");
+      this.props.history.push("/home");
     });
   };
 
