@@ -219,6 +219,7 @@ fieldset .label-container:nth-child(2) {
 
 .step-form-label {
   padding-right: 10px;
+  color: #dda2b6;
 }
 
 .step-container {
@@ -243,6 +244,11 @@ fieldset .label-container:nth-child(2) {
   margin: 0 auto;
   width: 200px;
   font-size: 125%;
+}
+
+.ingredient-number-label-container {
+  color: #dda2b6;
+  /* text-shadow: 1px 1px rgb(221, 221, 221); */
 }
 
 @media only screen and (max-width: 1200px) {
@@ -283,4 +289,37 @@ fieldset .label-container:nth-child(2) {
 }
 
 @media only screen and (max-width: 480px) {
+  .recipe-img {
+    width: 100%;
+    height: auto;
+  }
+  .recipe-img-container {
+    background-color: rgb(247, 255, 247);
+  }
+
+  .ingredient-container {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .ingredient-number-label-container {
+    position: absolute;
+    left: 3%;
+  }
+
+  .step-form-label {
+    font-size: 90%;
+  }
+
+  .form-textarea[name="description"] {
+    width: 80%;
+  }
+
+  .form-recipe-header {
+    font-size: 175%;
+  }
 }
