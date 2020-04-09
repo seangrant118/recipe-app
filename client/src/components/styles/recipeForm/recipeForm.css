@@ -251,6 +251,13 @@ fieldset .label-container:nth-child(2) {
   /* text-shadow: 1px 1px rgb(221, 221, 221); */
 }
 
+#ingredient-input-field .ingredient-container:nth-child(2) .label-container {
+  display: block;
+}
+
+.ingredient-item-container .label-container {
+  display: none;
+}
 @media only screen and (max-width: 1200px) {
   .form-container {
     width: 100%;
@@ -299,7 +306,7 @@ fieldset .label-container:nth-child(2) {
 
   .ingredient-container {
     display: flex;
-    width: 90%;
+    width: 80%;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
@@ -322,12 +329,8 @@ fieldset .label-container:nth-child(2) {
   .form-recipe-header {
     font-size: 175%;
   }
-}
 
-#ingredient-input-field .ingredient-container:nth-child(2) .label-container {
-  display: block;
-}
-
-.ingredient-item-container .label-container {
-  display: none;
+  .ingredient-item-container .label-container {
+    display: block;
+  }
 }
