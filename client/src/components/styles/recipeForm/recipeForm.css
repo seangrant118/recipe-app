@@ -244,3 +244,26 @@ fieldset .label-container:nth-child(2) {
   width: 200px;
   font-size: 125%;
 }
+
+@media only screen and (max-width: 1200px) {
+  .form-container {
+    width: 100%;
+    margin-top: 25px;
+  }
+  .ingredient-container {
+    width: 60%;
+  }
+
+  .form-recipe-header {
+    margin: 15px 0;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 480px) {
+}
