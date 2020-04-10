@@ -99,7 +99,23 @@
   .view-info-container .icon-desc p {
     font-size: 110%;
   }
+  .owner {
+    font-size: 80%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
+  .view-info-container .icon-desc p {
+    font-size: 90%;
+  }
+  .owner {
+    font-size: 75%;
+  }
+  .view-button-container {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  .recipe-view-container {
+    margin: 25px 0;
+  }
 }
