@@ -83,6 +83,22 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .recipe-view-container .description-container .description {
+    font-size: 65%;
+  }
+  .view-info-container {
+    width: 85%;
+  }
+  .view-ingredients-container {
+    padding-bottom: 0;
+  }
+  .view-instruction {
+    font-size: 70%;
+    line-height: 1.5em;
+  }
+  .view-info-container .icon-desc p {
+    font-size: 110%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
