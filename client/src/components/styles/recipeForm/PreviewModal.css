@@ -290,4 +290,29 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .preview-title {
+    font-size: 150%;
+  }
+  .description-container {
+    width: 95%;
+  }
+  .description {
+    font-size: 60%;
+    line-height: 1.8em;
+  }
+  .instructions-container {
+    width: 95%;
+  }
+  .ingredients-container {
+    width: 90%;
+  }
+  .info-container {
+    width: 95%;
+  }
+  .icon-desc p {
+    font-size: 85%;
+  }
+  .instruction {
+    font-size: 65%;
+  }
 }
