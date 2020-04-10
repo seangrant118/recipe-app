@@ -12,10 +12,14 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
   border-radius: 15px;
+  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -69,8 +73,11 @@
 }
 
 .image-info-container {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   width: 75%;
   margin: 0 auto;
@@ -107,7 +114,9 @@
 }
 
 .icon-desc {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -129,6 +138,7 @@
 .ingredients-list {
   list-style: none;
   display: flexbox;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 0;
 }
@@ -147,6 +157,7 @@
 }
 
 .icon-ing {
+  display: -webkit-box;
   display: flex;
 }
 
@@ -176,6 +187,7 @@
 }
 
 .each-step {
+  display: -webkit-box;
   display: flex;
   margin-bottom: 20px;
 }
@@ -255,6 +267,8 @@
     font-size: 60%;
   }
   .image-info-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
   }
   .image-container {
@@ -265,8 +279,11 @@
     width: 85%;
   }
   .icon-desc {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     justify-content: center;
     padding-right: 10px;
   }
