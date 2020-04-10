@@ -246,6 +246,47 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .ReactModal__Content {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .description {
+    font-size: 60%;
+  }
+  .image-info-container {
+    flex-direction: column;
+  }
+  .image-container {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .info-container {
+    width: 85%;
+  }
+  .icon-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+  }
+  .ingredients-container {
+    padding-bottom: 0;
+  }
+  .icon-ing li {
+    font-size: 90%;
+  }
+
+  .instruction {
+    font-size: 70%;
+    line-height: 1.5em;
+  }
+  .each-step {
+    margin-bottom: 10px;
+  }
+
+  .preview-title {
+    margin-top: 10px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
