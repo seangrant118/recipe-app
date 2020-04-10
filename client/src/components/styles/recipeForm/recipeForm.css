@@ -312,10 +312,12 @@ fieldset .label-container:nth-child(2) {
     align-items: center;
     justify-content: center;
     position: relative;
+    padding-bottom: 25px;
+    padding-top: 10px;
   }
   .ingredient-number-label-container {
     position: absolute;
-    left: 3%;
+    left: 0%;
   }
 
   .step-form-label {
