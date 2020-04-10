@@ -74,4 +74,16 @@
   .image-container img {
     max-height: 300px;
   }
+  .recipe-view-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 480px) {
 }

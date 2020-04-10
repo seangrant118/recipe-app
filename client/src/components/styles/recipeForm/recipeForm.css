@@ -297,8 +297,9 @@ fieldset .label-container:nth-child(2) {
 
 @media only screen and (max-width: 480px) {
   .recipe-img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 100%;
   }
   .recipe-img-container {
     background-color: rgb(247, 255, 247);
