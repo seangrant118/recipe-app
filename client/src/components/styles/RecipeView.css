@@ -69,6 +69,19 @@
   max-height: 500px;
   width: auto;
 }
+.instruction-complete {
+  text-decoration: line-through;
+  color: gray;
+  transition: all 0.3s ease-in;
+}
+.view-instruction span {
+  cursor: pointer;
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
 
 @media only screen and (max-width: 1200px) {
   .image-container img {

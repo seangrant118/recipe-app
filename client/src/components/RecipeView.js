@@ -29,6 +29,11 @@ class RecipeView extends React.Component {
     const id = this.props.match.params.id;
     this.props.history.push("/edit/recipe/" + id);
   };
+  toggleStrikethrough = (i) => {
+    document
+      .getElementById(`instruction${i}`)
+      .classList.toggle("instruction-complete");
+  };
   render() {
     const { recipe } = this.props;
     if (this.state.loaded) {
@@ -100,7 +105,14 @@ class RecipeView extends React.Component {
                 return (
                   <div key={i} className="each-step">
                     <p className="step-number">{i + 1}</p>
-                    <li className="view-instruction">{step.step}</li>
+                    <li data-id={i} className="view-instruction">
+                      <span
+                        id={`instruction${i}`}
+                        onClick={() => this.toggleStrikethrough(i)}
+                      >
+                        {step.step}
+                      </span>
+                    </li>
                   </div>
                 );
               })}
