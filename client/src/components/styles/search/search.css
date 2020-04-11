@@ -117,4 +117,7 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .recipe-card {
+    width: 99%;
+  }
 }
