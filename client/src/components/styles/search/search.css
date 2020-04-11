@@ -10,6 +10,9 @@
 
 .displaying {
   font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 125%;
 }
 
 .search-items-display-container {
@@ -87,4 +90,31 @@
   height: 1em;
   margin-top: 0.2em;
   background: white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .search-items-container {
+    max-width: 100%;
+    margin-top: 25px;
+  }
+  .recipe-card {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .recipe-card {
+    width: 48.5%;
+    height: 250px;
+  }
+  .card-desc {
+    font-size: 70%;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
 }
