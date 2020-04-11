@@ -114,10 +114,18 @@
     font-size: 70%;
     margin-bottom: 5px;
   }
+  .displaying {
+    font-size: 110%;
+    padding: 10px 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .recipe-card {
     width: 99%;
+  }
+  .displaying {
+    font-size: 90%;
+    padding: 10px 0;
   }
 }
