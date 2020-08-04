@@ -1,13 +1,13 @@
 import axios from "axios";
 import { AUTH_USER, AUTH_ERROR } from "./types";
 
-export const signup = (formProps, callback) => async dispatch => {
+export const signup = (formProps, callback) => async (dispatch) => {
   try {
     const response = await axios.post(
       "http://localhost:3090/signup",
       formProps
     );
-    console.log(response.data);
+    // console.log(response.data);
     dispatch({ type: AUTH_USER, payload: response.data });
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("userID", response.data.userID);
@@ -17,13 +17,13 @@ export const signup = (formProps, callback) => async dispatch => {
   }
 };
 
-export const signin = (formProps, callback) => async dispatch => {
+export const signin = (formProps, callback) => async (dispatch) => {
   try {
     const response = await axios.post(
       "http://localhost:3090/signin",
       formProps
     );
-    console.log(response.data);
+    // console.log(response.data);
     dispatch({ type: AUTH_USER, payload: response.data });
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("userID", response.data.userID);
@@ -39,7 +39,7 @@ export const signout = () => {
   return {
     type: AUTH_USER,
     payload: {
-      token: ""
-    }
+      token: "",
+    },
   };
 };
