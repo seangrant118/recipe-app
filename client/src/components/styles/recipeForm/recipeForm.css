@@ -202,6 +202,13 @@ fieldset .label-container:nth-child(2) {
   border-color: #f5d7e1;
 }
 
+input:hover,
+input:active,
+textarea:hover,
+textarea:active {
+  border-color: #f5d7e1;
+}
+
 .unit {
   height: 40px;
   font-size: 80%;
