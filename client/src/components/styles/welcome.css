@@ -1,0 +1,20 @@
+.welcome-container {
+  margin: 50px auto;
+  width: 1140px;
+}
+
+.welcome-header {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .welcome-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .welcome-container {
+    font-size: 80%;
+  }
+}
