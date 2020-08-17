@@ -24,7 +24,7 @@ export const recipeSearchQuery = (id, callback) => async (dispatch) => {
     dispatch({ type: RECIPE_SEARCH_QUERY, payload: response.data });
     callback();
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 };
 
@@ -36,6 +36,6 @@ export const ingredientSearchQuery = (id, callback) => async (dispatch) => {
     dispatch({ type: INGREDIENT_SEARCH_QUERY, payload: response.data });
     callback();
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 };

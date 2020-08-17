@@ -30,7 +30,6 @@ const SearchBar = (props) => {
     if (searchItem.trim() === "") {
       return false;
     }
-    // props.recipeSearch(searchItem);
     const query = searchItem.trim();
     setSearchItem("");
     props.recipeSearchQuery(query, null);
@@ -67,8 +66,6 @@ const SearchBar = (props) => {
     const name = e.target.getAttribute("name");
 
     setIngSearchItems(ingSearchItems.filter((item) => item !== name));
-
-    // setIngSearchItems(ingSearchItems.filter((item) => item.dataset.id !== i));
   };
 
   const removeSearchError = () => {
