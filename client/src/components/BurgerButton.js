@@ -26,7 +26,7 @@ class BurgerButton extends React.Component {
             </div>
             <div className="menu-list">
               {this.props.children.map((Child, i) => {
-                console.log(Child.props);
+                // console.log(Child.props);
                 return (
                   <Link
                     className={Child.props.className}
