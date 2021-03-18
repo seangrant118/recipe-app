@@ -196,10 +196,11 @@ input::placeholder {
   margin-right: 10px;
   padding: 10px;
   border-radius: 5px;
+  line-height: 30px;
+  font-size: 16px;
   height: 90%;
   background-color: rgb(106, 212, 106);
   color: white;
-  vertical-align: middle;
   opacity: 1;
   -webkit-animation: fade 0.5s linear;
   animation: fade 0.5s linear;
