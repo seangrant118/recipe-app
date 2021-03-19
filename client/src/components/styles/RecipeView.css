@@ -89,6 +89,10 @@
   -ms-user-select: none; /* IE10+ */
 }
 
+.owner {
+  padding-bottom: 20px;
+}
+
 @media only screen and (max-width: 1200px) {
   .image-container img {
     max-height: 300px;
