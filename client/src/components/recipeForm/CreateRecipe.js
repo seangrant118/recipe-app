@@ -74,7 +74,7 @@ class CreateRecipe extends React.Component {
     if (["step"].includes(e.target.className)) {
       let steps = [...this.state.steps];
       steps[e.target.dataset.id][e.target.className] = e.target.value;
-      this.setState({ steps }, () => console.log(this.state.steps));
+      this.setState({ steps });
     } else {
       this.setState({ [e.target.name]: e.target.value });
     }

@@ -4,10 +4,10 @@ import {
   CREATE_ERROR,
   GET_RECIPE,
   DELETE_RECIPE,
-  EDIT_RECIPE
+  EDIT_RECIPE,
 } from "./types";
 
-export const createRecipe = (newRecipe, callback) => async dispatch => {
+export const createRecipe = (newRecipe, callback) => async (dispatch) => {
   try {
     const response = await axios.post(
       "http://localhost:3090/createrecipe",
@@ -21,7 +21,7 @@ export const createRecipe = (newRecipe, callback) => async dispatch => {
   }
 };
 
-export const getRecipe = (id, callback) => async dispatch => {
+export const getRecipe = (id, callback) => async (dispatch) => {
   try {
     const response = await axios.get("http://localhost:3090/recipe/" + id);
     dispatch({ type: GET_RECIPE, payload: response.data });
@@ -32,7 +32,7 @@ export const getRecipe = (id, callback) => async dispatch => {
   }
 };
 
-export const deleteRecipe = (id, callback) => async dispatch => {
+export const deleteRecipe = (id, callback) => async (dispatch) => {
   try {
     const response = await axios.delete("http://localhost:3090/recipe/" + id);
     dispatch({ type: DELETE_RECIPE, payload: response.data });
@@ -43,7 +43,7 @@ export const deleteRecipe = (id, callback) => async dispatch => {
   }
 };
 
-export const editRecipe = (editedRecipe, callback) => async dispatch => {
+export const editRecipe = (editedRecipe, callback) => async (dispatch) => {
   let id = editedRecipe._id;
   try {
     const response = axios.put(
