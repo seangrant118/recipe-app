@@ -6,16 +6,18 @@ const app = express();
 const router = require("./router");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const mongoAtlasUri = require("./config").mongoAtlasUri;
 
 //DB setup
-mongoose.connect("mongodb://localhost/recipe", {
+mongoose.connect(mongoAtlasUri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 const connection = mongoose.connection;
 
-connection.on("connected", function() {
+connection.on("error", (err) => console.log(`connection error ${err}`));
+connection.on("connected", function () {
   console.log("connected to db");
 });
 
