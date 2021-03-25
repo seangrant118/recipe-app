@@ -52,6 +52,19 @@ exports.getRecipe = function (req, res, next) {
     });
 };
 
+exports.getRandom = function (req, res, next) {
+  Recipe.aggregate()
+    .sample(2)
+    .exec(function (err, recipes) {
+      if (err) {
+        console.log(err);
+        return next(err);
+      }
+
+      res.json(recipes);
+    });
+};
+
 exports.recipeSearch = function (req, res, next) {
   const title = req.params.id;
 
