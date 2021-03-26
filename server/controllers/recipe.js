@@ -54,7 +54,7 @@ exports.getRecipe = function (req, res, next) {
 
 exports.getRandom = function (req, res, next) {
   Recipe.aggregate()
-    .sample(2)
+    .sample(3)
     .exec(function (err, recipes) {
       if (err) {
         console.log(err);

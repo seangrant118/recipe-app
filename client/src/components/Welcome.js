@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import RecipeCard from "../components/RecipeCard";
 import "./styles/welcome.css";
 
 class Welcome extends React.Component {
@@ -23,9 +24,28 @@ class Welcome extends React.Component {
         <h1 className="welcome-header">
           Welcome! Sign in or Sign up to create a recipe
         </h1>
-        <h3 className="welcome-search">
+        <h5 className="welcome-search">
           Search for great recipes by name or ingredient
-        </h3>
+        </h5>
+        <h3 className="welcome-featured">Featured Recipes</h3>
+        <div className="welcome-display-container">
+          {this.state.data ? (
+            this.state.data.map((result, i) => {
+              console.log(result);
+              return (
+                <RecipeCard
+                  route={result.id}
+                  description={result.description}
+                  title={result.title}
+                  image={result.image}
+                  key={i}
+                />
+              );
+            })
+          ) : (
+            <div>...Loading</div>
+          )}
+        </div>
       </div>
     );
   }
