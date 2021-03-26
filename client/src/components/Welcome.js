@@ -34,7 +34,7 @@ class Welcome extends React.Component {
               console.log(result);
               return (
                 <RecipeCard
-                  route={result.id}
+                  route={"/recipes/" + result._id}
                   description={result.description}
                   title={result.title}
                   image={result.image}
