@@ -56,6 +56,14 @@ const RecipeFormIngredient = (props) => {
                   >
                     <option value="cups">cups</option>
                     <option value="tbs">tbs</option>
+                    <option value="tbs">tsp</option>
+                    <option value="tbs">piece</option>
+                    <option value="tbs">oz</option>
+                    <option value="tbs">lb</option>
+                    <option value="tbs">grams</option>
+                    <option value="tbs">liter</option>
+                    <option value="tbs">quart</option>
+                    <option value="tbs"></option>
                   </select>
                 </div>
                 <div className="ingredient-item-container">
