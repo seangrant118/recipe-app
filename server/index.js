@@ -6,7 +6,8 @@ const app = express();
 const router = require("./router");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const mongoAtlasUri = require("./config").mongoAtlasUri;
+const mongoAtlasUri =
+  process.env.mongoAtlasUri || require("./config").mongoAtlasUri;
 
 //DB setup
 mongoose.connect(mongoAtlasUri, {
